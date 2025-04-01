@@ -8,7 +8,7 @@ interface PageHeaderProps {
 
 export default function PageHeader({ title, subtitle, badge = "Nextcare Dental" }: PageHeaderProps) {
   return (
-    <div className="bg-gradient-to-b from-primary/5 via-[#e8f5ff] to-white py-24 relative overflow-hidden">
+    <div className="page-gradient py-24 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-20 right-[10%] w-64 h-64 rounded-full bg-[#36B5A6]/10 blur-3xl"></div>
       <div className="absolute bottom-0 left-[10%] w-80 h-80 rounded-full bg-[#00ADDD]/10 blur-3xl"></div>

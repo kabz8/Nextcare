@@ -54,3 +54,12 @@
 .bg-brand-gradient-light {
   background: linear-gradient(135deg, rgba(0, 75, 153, 0.1), rgba(0, 173, 221, 0.1), rgba(54, 181, 166, 0.1));
 }
+
+/* Full page gradient for content pages */
+.page-gradient {
+  background: linear-gradient(180deg, 
+    rgba(0, 75, 153, 0.05) 0%,
+    rgba(0, 173, 221, 0.05) 40%,
+    rgba(54, 181, 166, 0.05) 100%);
+  min-height: calc(100vh - 70px); /* Account for header height */
+}

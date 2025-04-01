@@ -58,50 +58,52 @@ export default function FAQ() {
         <meta name="description" content="Find answers to common questions about dental care, procedures, insurance, and appointments at Nextcare Dental Studio in Nairobi, Kenya." />
       </Helmet>
       
-      <PageHeader 
-        title="Frequently Asked Questions" 
-        subtitle="Find answers to common questions about our dental services, procedures, and policies."
-        badge="Help & Information"
-      />
-      
-      <div className="py-12 bg-white">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqItems.map((item, index) => (
-              <AccordionItem 
-                key={index} 
-                value={`item-${index}`}
-                className="border rounded-lg px-6 shadow-sm"
-              >
-                <AccordionTrigger className="text-left font-medium text-lg py-4">
-                  {item.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-neutral-700 pb-6">
-                  {item.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-          
-          <div className="mt-12 text-center">
-            <h2 className="text-2xl font-bold mb-4">Still Have Questions?</h2>
-            <p className="mb-6 text-neutral-700">
-              If you couldn't find the answer to your question, please feel free to contact us.
-              Our friendly team is always ready to help.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a 
-                href="/contact" 
-                className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors"
-              >
-                Contact Us
-              </a>
-              <a 
-                href="tel:+254746290170" 
-                className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary rounded-full hover:bg-primary/10 transition-colors"
-              >
-                Call Us Now
-              </a>
+      <div className="page-gradient">
+        <PageHeader 
+          title="Frequently Asked Questions" 
+          subtitle="Find answers to common questions about our dental services, procedures, and policies."
+          badge="Help & Information"
+        />
+        
+        <div className="py-12">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqItems.map((item, index) => (
+                <AccordionItem 
+                  key={index} 
+                  value={`item-${index}`}
+                  className="border rounded-lg px-6 shadow-sm"
+                >
+                  <AccordionTrigger className="text-left font-medium text-lg py-4">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-neutral-700 pb-6">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+            
+            <div className="mt-12 text-center">
+              <h2 className="text-2xl font-bold mb-4">Still Have Questions?</h2>
+              <p className="mb-6 text-neutral-700">
+                If you couldn't find the answer to your question, please feel free to contact us.
+                Our friendly team is always ready to help.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <a 
+                  href="/contact" 
+                  className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors"
+                >
+                  Contact Us
+                </a>
+                <a 
+                  href="tel:+254746290170" 
+                  className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary rounded-full hover:bg-primary/10 transition-colors"
+                >
+                  Call Us Now
+                </a>
+              </div>
             </div>
           </div>
         </div>

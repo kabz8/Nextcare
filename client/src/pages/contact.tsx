@@ -21,14 +21,15 @@ export default function Contact() {
         <meta name="description" content="Get in touch with Nextcare Dental Studio in Nairobi, Kenya. We're here to answer your questions and provide the dental care you need." />
       </Helmet>
       
-      <PageHeader 
-        title="Contact Us" 
-        subtitle="We're here to answer your questions and help you schedule your next appointment."
-        badge="Get In Touch"
-      />
-      
-      <div className="py-12 bg-white">
-        <div className="container mx-auto px-4 max-w-6xl">
+      <div className="page-gradient">
+        <PageHeader 
+          title="Contact Us" 
+          subtitle="We're here to answer your questions and help you schedule your next appointment."
+          badge="Get In Touch"
+        />
+        
+        <div className="py-12">
+          <div className="container mx-auto px-4 max-w-6xl">
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Contact Information */}
@@ -214,6 +215,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
+    </div>
     </>
   );
 }

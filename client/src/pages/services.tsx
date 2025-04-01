@@ -64,8 +64,23 @@ export default function Services() {
           {isLoading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[...Array(6)].map((_, i) => (
-                <Card key={i} className="h-72 animate-pulse">
-                  <CardContent className="flex flex-col justify-center h-full bg-neutral-100"></CardContent>
+                <Card key={i} className="border-neutral-200 overflow-hidden animate-pulse">
+                  <div className="bg-gradient-to-br from-primary/5 to-primary/15 h-full flex flex-col">
+                    <CardHeader>
+                      <div className="mb-4 flex">
+                        <div className="h-16 w-16 rounded-full bg-neutral-200"></div>
+                      </div>
+                      <div className="h-6 w-32 bg-neutral-200 rounded"></div>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <div className="h-4 w-full bg-neutral-200 rounded mb-2"></div>
+                      <div className="h-4 w-full bg-neutral-200 rounded mb-2"></div>
+                      <div className="h-4 w-2/3 bg-neutral-200 rounded"></div>
+                    </CardContent>
+                    <CardFooter className="justify-end pb-4">
+                      <div className="h-4 w-24 bg-neutral-200 rounded"></div>
+                    </CardFooter>
+                  </div>
                 </Card>
               ))}
             </div>
@@ -77,23 +92,25 @@ export default function Services() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services?.map((service) => (
-                <Card key={service.id} className="bg-neutral-50 border-neutral-200 hover:shadow-md transition-shadow">
-                  <CardHeader>
-                    <div className="text-primary mb-4">
-                      {getServiceIcon(service.icon)}
-                    </div>
-                    <CardTitle className="text-xl font-semibold">{service.name}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-neutral-700">{service.description}</CardDescription>
-                  </CardContent>
-                  <CardFooter className="pt-0">
-                    <Link href="/booking">
-                      <Button variant="link" className="px-0 text-primary font-medium hover:underline flex items-center">
+                <Card key={service.id} className="border-neutral-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:translate-y-[-5px]">
+                  <div className="bg-gradient-to-br from-primary/5 to-primary/15 h-full flex flex-col">
+                    <CardHeader>
+                      <div className="mb-4 flex">
+                        <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center border-2 border-primary/20 shadow-sm">
+                          {getServiceIcon(service.icon)}
+                        </div>
+                      </div>
+                      <CardTitle className="text-xl font-semibold">{service.name}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <CardDescription className="text-neutral-700">{service.description}</CardDescription>
+                    </CardContent>
+                    <CardFooter className="justify-end pb-4">
+                      <Link href="/booking" className="text-primary font-medium hover:underline flex items-center">
                         Book Now <span className="ml-2">→</span>
-                      </Button>
-                    </Link>
-                  </CardFooter>
+                      </Link>
+                    </CardFooter>
+                  </div>
                 </Card>
               ))}
             </div>

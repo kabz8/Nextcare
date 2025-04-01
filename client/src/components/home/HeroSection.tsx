@@ -6,8 +6,8 @@ import heroDentistImage from "../../assets/hero-dentist.png";
 export default function HeroSection() {
   return (
     <section className="min-h-[90vh] bg-gradient-to-br from-white via-[#e8f5ff] to-[#e6f7fc] flex items-center py-16">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2 mb-12 md:mb-0">
             <div className="inline-block bg-primary/10 text-primary font-medium px-4 py-2 rounded-full mb-4">
               Leading Dental Service in Kenya
@@ -67,17 +67,17 @@ export default function HeroSection() {
             <div className="absolute -top-10 -left-10 w-20 h-20 rounded-full bg-[#36B5A6]/20 z-0 hidden md:block"></div>
             <div className="absolute -bottom-5 -right-5 w-16 h-16 rounded-full bg-[#00ADDD]/20 z-0 hidden md:block"></div>
             
-            <div className="relative z-10 rounded-xl overflow-hidden shadow-2xl shadow-primary/20 border-4 border-white">
+            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 border-[6px] border-white transform hover:scale-[1.02] transition-transform duration-300">
               <img 
                 src={heroDentistImage} 
                 alt="Smiling dental professional at Nextcare Dental Studio" 
                 className="max-w-full h-auto object-cover" 
-                width="600" 
-                height="600"
+                width="540" 
+                height="540"
               />
               
               {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent mix-blend-overlay"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent mix-blend-overlay"></div>
             </div>
           </div>
         </div>

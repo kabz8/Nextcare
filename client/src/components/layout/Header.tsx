@@ -20,21 +20,23 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-white shadow-sm">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+    <header className="bg-white shadow-md sticky top-0 z-50">
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center max-w-6xl">
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
             <img src={logoPath} alt="Nextcare Dental Studio" className="h-12" />
           </Link>
         </div>
         
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex space-x-6">
           {navLinks.map((link) => (
             <Link 
               key={link.name} 
               href={link.href}
-              className={`font-medium hover:text-brand-light-blue transition-colors ${
-                location === link.href ? 'text-brand-blue' : 'text-neutral-700'
+              className={`font-medium relative px-2 py-1 transition-all duration-200 ${
+                location === link.href 
+                ? 'text-primary after:absolute after:bottom-[-3px] after:left-0 after:h-[3px] after:w-full after:bg-primary after:rounded-full' 
+                : 'text-neutral-700 hover:text-primary'
               }`}
             >
               {link.name}
@@ -44,7 +46,7 @@ export default function Header() {
         
         <div className="flex items-center">
           <Link href="/booking">
-            <Button>
+            <Button className="bg-primary hover:bg-primary/90 font-medium text-sm py-2 px-5 shadow-sm hover:shadow transition-all hover:translate-y-[-2px]">
               Book Appointment
             </Button>
           </Link>
@@ -77,8 +79,10 @@ export default function Header() {
                       key={link.name} 
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className={`px-4 py-2 font-medium hover:bg-brand-light-blue/10 rounded-md ${
-                        location === link.href ? 'text-brand-blue' : 'text-neutral-700'
+                      className={`px-4 py-3 font-medium rounded-md transition-all ${
+                        location === link.href 
+                        ? 'text-primary bg-primary/5 border-l-2 border-primary' 
+                        : 'text-neutral-700 hover:bg-neutral-50 hover:text-primary'
                       }`}
                     >
                       {link.name}
@@ -87,7 +91,7 @@ export default function Header() {
                   
                   <div className="pt-4 mt-4 border-t border-neutral-200">
                     <Link href="/booking" onClick={() => setMobileMenuOpen(false)}>
-                      <Button className="w-full">
+                      <Button className="w-full bg-primary hover:bg-primary/90 font-medium py-2.5 shadow-sm">
                         Book Appointment
                       </Button>
                     </Link>

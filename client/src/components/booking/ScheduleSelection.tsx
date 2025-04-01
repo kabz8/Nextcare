@@ -30,10 +30,19 @@ export default function ScheduleSelection({ bookingData, onScheduleSelect, onBac
   const formattedDate = selectedDate ? format(selectedDate, "yyyy-MM-dd") : "";
   
   // Fetch available time slots for selected date
-  const { data: timeSlots, isLoading: timeSlotsLoading } = useQuery<TimeSlot[]>({
+  const { data: timeSlots, isLoading: timeSlotsLoading, error: timeSlotsError } = useQuery<TimeSlot[]>({
     queryKey: ['/api/time-slots', formattedDate],
     enabled: !!formattedDate,
   });
+  
+  // For debugging
+  useEffect(() => {
+    if (formattedDate) {
+      console.log("Selected date:", formattedDate);
+      console.log("Time slots:", timeSlots);
+      console.log("Time slots error:", timeSlotsError);
+    }
+  }, [formattedDate, timeSlots, timeSlotsError]);
   
   const handleDateSelect = (date: Date | undefined) => {
     setSelectedDate(date);
@@ -141,6 +150,13 @@ export default function ScheduleSelection({ bookingData, onScheduleSelect, onBac
                       {slot.time}
                     </Button>
                   ))}
+                </div>
+              ) : timeSlotsError ? (
+                <div className="text-red-500">
+                  <p>Error loading time slots. Please try again.</p>
+                  <pre className="text-xs mt-2 bg-neutral-100 p-2 rounded overflow-x-auto">
+                    {JSON.stringify(timeSlotsError, null, 2)}
+                  </pre>
                 </div>
               ) : (
                 <p className="text-neutral-500">No available time slots for this date. Please select another date.</p>

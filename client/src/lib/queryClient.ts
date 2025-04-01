@@ -29,7 +29,20 @@ export const getQueryFn: <T>(options: {
 }) => QueryFunction<T> =
   ({ on401: unauthorizedBehavior }) =>
   async ({ queryKey }) => {
-    const res = await fetch(queryKey[0] as string, {
+    // Handle array query keys for parameterized queries
+    const baseUrl = queryKey[0] as string;
+    let url = baseUrl;
+    
+    // If there's a second parameter and it's a string, treat it as a query parameter
+    if (queryKey.length > 1 && typeof queryKey[1] === 'string' && queryKey[1]) {
+      // For specific endpoints that need parameters
+      if (baseUrl === '/api/time-slots') {
+        url = `${baseUrl}?date=${queryKey[1]}`;
+      }
+    }
+    
+    console.log("Making request to:", url);
+    const res = await fetch(url, {
       credentials: "include",
     });
 

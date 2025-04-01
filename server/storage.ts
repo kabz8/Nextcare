@@ -151,6 +151,13 @@ export class MemStorage implements IStorage {
   }
   
   async getAvailableTimeSlots(date: string): Promise<TimeSlot[]> {
+    console.log(`Getting available time slots for date: ${date}`);
+    
+    // If no slots exist for this date, generate them on demand
+    // (only for non-weekend days)
+    const requestedDate = new Date(date);
+    const dayOfWeek = requestedDate.getDay();
+    
     // First check if we already have slots for this date
     const existingSlots = Array.from(this.timeSlots.values()).filter(
       (slot) => slot.date === date && slot.available
@@ -158,22 +165,22 @@ export class MemStorage implements IStorage {
     
     // If we have slots, return them
     if (existingSlots.length > 0) {
+      console.log(`Found ${existingSlots.length} existing time slots for date ${date}`);
       return existingSlots;
     }
     
-    // If no slots exist for this date, generate them on demand
-    // (only for non-weekend days)
-    const requestedDate = new Date(date);
-    const dayOfWeek = requestedDate.getDay();
+    console.log(`No existing slots found for ${date}, generating new slots...`);
     
     // Skip slot generation for weekends
     if (dayOfWeek === 0 || dayOfWeek === 6) {
+      console.log(`${date} is a weekend, not generating slots`);
       return [];
     }
     
-    // Generate time slots from 8:00 AM to 5:30 PM with 30-minute intervals
+    // Generate time slots from 9:00 AM to 5:30 PM with 30-minute intervals
     const newSlots: TimeSlot[] = [];
-    for (let hour = 8; hour <= 17; hour++) {
+    // Changed starting hour to 9 as requested
+    for (let hour = 9; hour <= 17; hour++) {
       for (let minute = 0; minute < 60; minute += 30) {
         // Skip lunch hour (1:00 PM to 2:00 PM)
         if (hour === 13) continue;
@@ -193,6 +200,7 @@ export class MemStorage implements IStorage {
       }
     }
     
+    console.log(`Generated ${newSlots.length} new time slots for date ${date}`);
     return newSlots;
   }
   
@@ -307,9 +315,10 @@ export class MemStorage implements IStorage {
     // Create available time slots for the next 30 days
     const today = new Date();
     
-    // Generate time slots from 8:00 AM to 5:30 PM with 30-minute intervals
+    // Generate time slots from 9:00 AM to 5:30 PM with 30-minute intervals
     const times: string[] = [];
-    for (let hour = 8; hour <= 17; hour++) {
+    // Changed starting hour to 9 as requested
+    for (let hour = 9; hour <= 17; hour++) {
       for (let minute = 0; minute < 60; minute += 30) {
         // Skip lunch hour (1:00 PM to 2:00 PM)
         if (hour === 13) continue;

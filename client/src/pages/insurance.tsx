@@ -3,49 +3,63 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { FaShieldAlt, FaCheckCircle, FaInfoCircle, FaUserMd } from "react-icons/fa";
 import { Shield, Check, Info, ShieldCheck, Heart, Users } from "lucide-react";
+import insuranceLogosPath from '@assets/image_1743504900340.png';
 
+// Updated insurance partners based on the logos image
 const insurancePartners = [
   {
     id: 1,
     name: "Jubilee Insurance",
-    logo: <ShieldCheck className="h-12 w-12 text-primary" />,
     description: "Comprehensive dental coverage with a wide network of providers.",
     plans: ["Basic Dental", "Standard Dental", "Premium Dental"]
   },
   {
     id: 2,
-    name: "AAR Insurance",
-    logo: <Shield className="h-12 w-12 text-primary" />,
+    name: "Minet",
     description: "Flexible dental plans for individuals and families with good preventive care coverage.",
-    plans: ["Individual Plan", "Family Plan", "Senior Plan"]
+    plans: ["Individual Plan", "Family Plan", "Corporate Plan"]
   },
   {
     id: 3,
-    name: "Britam Insurance",
-    logo: <Heart className="h-12 w-12 text-primary" />,
+    name: "Sanlam",
     description: "Affordable dental plans with excellent customer service and quick claims processing.",
     plans: ["Basic Coverage", "Enhanced Coverage", "Premium Coverage"]
   },
   {
     id: 4,
     name: "CIC Insurance",
-    logo: <Check className="h-12 w-12 text-primary" />,
     description: "Specialized dental plans with focus on preventive and orthodontic care.",
     plans: ["Preventive Care", "Comprehensive Care", "Orthodontic Care"]
   },
   {
     id: 5,
-    name: "NHIF",
-    logo: <Users className="h-12 w-12 text-primary" />,
+    name: "UAP",
     description: "National health insurance coverage for basic dental procedures and emergencies.",
-    plans: ["Basic Coverage"]
+    plans: ["Basic Coverage", "Premium Coverage", "Family Coverage"]
   },
   {
     id: 6,
-    name: "Madison Insurance",
-    logo: <Info className="h-12 w-12 text-primary" />,
+    name: "Heritage Insurance",
     description: "Customizable dental plans to meet your specific needs and budget.",
     plans: ["Essential Plan", "Comprehensive Plan", "Elite Plan"]
+  },
+  {
+    id: 7,
+    name: "Cigna",
+    description: "International coverage with comprehensive dental benefits.",
+    plans: ["Global Health", "International Plan", "Expatriate Plan"]
+  },
+  {
+    id: 8,
+    name: "First Assurance",
+    description: "Reliable dental coverage with straightforward claims processing.",
+    plans: ["Basic Plan", "Standard Plan", "Premium Plan"]
+  },
+  {
+    id: 9,
+    name: "Liaison Group",
+    description: "Flexible insurance solutions for individuals and businesses.",
+    plans: ["Individual Plan", "Family Plan", "Corporate Plan"]
   }
 ];
 
@@ -68,6 +82,18 @@ export default function Insurance() {
       
       <div className="py-16 bg-white">
         <div className="container mx-auto px-4">
+          {/* Insurance Logos Display */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <h2 className="text-2xl font-bold mb-6 text-center">Our Insurance Partners</h2>
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-neutral-100">
+              <img 
+                src={insuranceLogosPath} 
+                alt="Our insurance partners" 
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          </div>
+
           <div className="max-w-3xl mx-auto mb-12 text-center">
             <h2 className="text-2xl font-bold mb-4">We Accept Most Major Insurance Plans</h2>
             <p className="text-neutral-700 mb-6">
@@ -101,7 +127,9 @@ export default function Insurance() {
               <Card key={partner.id} className="border border-neutral-200 hover:shadow-md transition-shadow">
                 <CardHeader className="pb-2 flex flex-col items-center text-center">
                   <div className="mb-4 p-4 bg-primary/10 rounded-full">
-                    {partner.logo}
+                    <div className="h-12 w-12 flex items-center justify-center">
+                      <ShieldCheck className="h-12 w-12 text-primary" />
+                    </div>
                   </div>
                   <CardTitle className="text-xl font-bold">{partner.name}</CardTitle>
                 </CardHeader>

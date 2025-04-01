@@ -8,26 +8,26 @@ import { FaLinkedin, FaFacebookSquare, FaTwitterSquare } from "react-icons/fa";
 const teamMembers = [
   {
     id: 1,
-    name: "Dr. Jane Kamau",
+    name: "Dr. Branice Munyasa",
     role: "Lead Dentist / Founder",
-    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop&q=80",
-    description: "Dr. Kamau has over 15 years of experience in cosmetic and restorative dentistry. She earned her degree from the University of Nairobi and has been serving the community with exceptional dental care.",
+    image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=400&h=400&fit=crop&q=80",
+    description: "Dr. Munyasa has over 15 years of experience in cosmetic and restorative dentistry. She earned her degree from the University of Nairobi and has been serving the community with exceptional dental care.",
     specialties: ["Cosmetic Dentistry", "Dental Implants", "Orthodontics"]
   },
   {
     id: 2,
-    name: "Dr. Michael Omondi",
+    name: "Dr. Samuel Otieno",
     role: "Senior Dentist",
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&q=80",
-    description: "Dr. Omondi specializes in pediatric dentistry and orthodontics. With a gentle approach and a warm smile, he makes dental visits enjoyable for children and adults alike.",
+    image: "https://images.unsplash.com/photo-1613918108466-292b78a8ef95?w=400&h=400&fit=crop&q=80",
+    description: "Dr. Otieno specializes in pediatric dentistry and orthodontics. With a gentle approach and a warm smile, he makes dental visits enjoyable for children and adults alike.",
     specialties: ["Pediatric Dentistry", "Orthodontics", "Preventive Care"]
   },
   {
     id: 3,
-    name: "Dr. Sarah Kimani",
+    name: "Dr. Esther Ndungu",
     role: "Cosmetic Specialist",
-    image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=400&h=400&fit=crop&q=80",
-    description: "Dr. Kimani is passionate about transforming smiles through cosmetic dentistry. She has advanced training in teeth whitening, veneers, and smile makeovers.",
+    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop&q=80",
+    description: "Dr. Ndungu is passionate about transforming smiles through cosmetic dentistry. She has advanced training in teeth whitening, veneers, and smile makeovers.",
     specialties: ["Teeth Whitening", "Veneers", "Smile Design"]
   },
   {
@@ -40,18 +40,18 @@ const teamMembers = [
   },
   {
     id: 5,
-    name: "David Mwangi",
+    name: "George Mutua",
     role: "Dental Assistant",
-    image: "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=400&h=400&fit=crop&q=80",
-    description: "David assists our dentists in providing efficient and comfortable treatment. His attention to detail and caring nature helps create a positive experience for every patient.",
+    image: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=400&h=400&fit=crop&q=80",
+    description: "George assists our dentists in providing efficient and comfortable treatment. His attention to detail and caring nature helps create a positive experience for every patient.",
     specialties: ["Patient Care", "Treatment Assistance", "Sterilization"]
   },
   {
     id: 6,
-    name: "Grace Akinyi",
+    name: "Faith Wanjiru",
     role: "Office Manager",
-    image: "https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?w=400&h=400&fit=crop&q=80",
-    description: "Grace manages our front office operations and ensures everything runs smoothly. She coordinates appointments, handles insurance matters, and welcomes patients with a friendly smile.",
+    image: "https://images.unsplash.com/photo-1573497019236-61e1a29bce98?w=400&h=400&fit=crop&q=80",
+    description: "Faith manages our front office operations and ensures everything runs smoothly. She coordinates appointments, handles insurance matters, and welcomes patients with a friendly smile.",
     specialties: ["Scheduling", "Insurance Coordination", "Patient Relations"]
   }
 ];

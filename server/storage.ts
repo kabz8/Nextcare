@@ -120,7 +120,10 @@ export class MemStorage implements IStorage {
       ...appointment, 
       id, 
       confirmed: false,
-      createdAt: new Date()
+      createdAt: new Date(),
+      message: appointment.message || null,
+      insuranceProvider: appointment.insuranceProvider || null,
+      bookingForSomeoneElse: appointment.bookingForSomeoneElse || null
     };
     this.appointments.set(id, newAppointment);
     
@@ -195,7 +198,11 @@ export class MemStorage implements IStorage {
   
   async createTimeSlot(timeSlot: InsertTimeSlot): Promise<TimeSlot> {
     const id = this.timeSlotIdCounter++;
-    const newTimeSlot: TimeSlot = { ...timeSlot, id };
+    const newTimeSlot: TimeSlot = { 
+      ...timeSlot, 
+      id, 
+      available: timeSlot.available === undefined ? true : timeSlot.available 
+    };
     this.timeSlots.set(id, newTimeSlot);
     return newTimeSlot;
   }
@@ -352,19 +359,19 @@ export class MemStorage implements IStorage {
     const initialTestimonials: InsertTestimonial[] = [
       {
         name: "Jane M.",
-        content: "I've been going to Village Dental for years. The staff is incredibly friendly and the care is top-notch. I would recommend them to anyone looking for quality dental care!",
+        content: "I've been going to Nextcare Dental Studio for years. The staff is incredibly friendly and the care is top-notch. I would recommend them to anyone looking for quality dental care!",
         rating: 5,
         patientSince: "2018"
       },
       {
         name: "Robert T.",
-        content: "I was terrified of dental work until I found Village Dental. Their gentle approach and concern for patient comfort has completely changed my perspective. Now I actually look forward to my appointments!",
+        content: "I was terrified of dental work until I found Nextcare Dental Studio. Their gentle approach and concern for patient comfort has completely changed my perspective. Now I actually look forward to my appointments!",
         rating: 5,
         patientSince: "2020"
       },
       {
         name: "Sarah C.",
-        content: "My Invisalign treatment has been life-changing! The team at Village Dental was professional, supportive, and the results exceeded my expectations. I can't stop smiling now!",
+        content: "My Invisalign treatment has been life-changing! The team at Nextcare Dental Studio was professional, supportive, and the results exceeded my expectations. I can't stop smiling now!",
         rating: 5,
         patientSince: "2021"
       }

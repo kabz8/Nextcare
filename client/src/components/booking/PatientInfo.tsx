@@ -46,7 +46,7 @@ export default function PatientInfo({ initialData, onSubmit, onBack }: PatientIn
     <CardContent className="px-6 py-8">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(handleSubmit)}>
-          <h3 className="text-2xl font-bold mb-6">Hi, Welcome to Village Dental - CO</h3>
+          <h3 className="text-2xl font-bold mb-6">Hi, Welcome to Nextcare Dental Studio - Kenya</h3>
           <p className="mb-6">Who is this appointment for?</p>
           
           <div className="mb-6">

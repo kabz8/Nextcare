@@ -36,7 +36,7 @@ export default function Confirmation({ bookingData, appointmentId }: Confirmatio
           <p className="mb-2"><strong>Service:</strong> {bookingData.serviceName}</p>
           <p className="mb-2"><strong>Date:</strong> {formattedDate}</p>
           <p className="mb-2"><strong>Time:</strong> {bookingData.appointmentTime}</p>
-          <p className="mb-2"><strong>Location:</strong> Village Dental - CO</p>
+          <p className="mb-2"><strong>Location:</strong> Nextcare Dental Studio - Nairobi, Kenya</p>
           <p className="mb-6"><strong>Patient:</strong> {bookingData.firstName} {bookingData.lastName}</p>
           
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -49,7 +49,7 @@ export default function Confirmation({ bookingData, appointmentId }: Confirmatio
           </div>
         </div>
         
-        <p className="text-sm text-neutral-500">Need to make changes? Please call our office at (555) 123-4567</p>
+        <p className="text-sm text-neutral-500">Need to make changes? Please call our office at +254 722 123456</p>
       </div>
     </CardContent>
   );

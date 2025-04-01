@@ -62,7 +62,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       /*
       const twilioClient = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
       await twilioClient.messages.create({
-        body: `Your appointment for ${appointment.appointmentDate} at ${appointment.appointmentTime} has been confirmed. Thank you for choosing Village Dental!`,
+        body: `Your appointment for ${appointment.appointmentDate} at ${appointment.appointmentTime} has been confirmed. Thank you for choosing Nextcare Dental Studio!`,
         from: process.env.TWILIO_PHONE_NUMBER,
         to: appointment.phone
       });

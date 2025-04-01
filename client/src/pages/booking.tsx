@@ -107,8 +107,8 @@ export default function Booking() {
   return (
     <>
       <Helmet>
-        <title>Book an Appointment - Village Dental</title>
-        <meta name="description" content="Schedule your dental appointment at Village Dental. We offer a wide range of dental services to meet your needs." />
+        <title>Book an Appointment - Nextcare Dental Studio</title>
+        <meta name="description" content="Schedule your dental appointment at Nextcare Dental Studio in Nairobi. We offer a wide range of dental services to meet your needs." />
       </Helmet>
       
       <div className="py-16 bg-neutral-50">

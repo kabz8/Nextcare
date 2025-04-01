@@ -112,8 +112,8 @@ export default function Footer() {
             <a href="#" className="hover:text-primary transition-colors ml-1">Privacy Policy</a> | 
             <a href="#" className="hover:text-primary transition-colors ml-1">Terms of Service</a>
           </p>
-          <p className="mt-2">
-            Developed by <a href="https://milespace.co.ke" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Milespace Group</a>
+          <p className="mt-3 mb-2 text-neutral-200">
+            Developed by <a href="https://milespace.co.ke" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-primary hover:underline">Milespace Group</a>
           </p>
         </div>
       </div>

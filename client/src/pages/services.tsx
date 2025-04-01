@@ -52,33 +52,43 @@ export default function Services() {
         <meta name="description" content="Learn about the comprehensive dental services we offer at Nextcare Dental Studio in Nairobi, Kenya including preventive, cosmetic, and restorative dental care." />
       </Helmet>
       
-      <div className="bg-gradient-to-r from-primary/10 to-green-100 py-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 text-center">Our Dental Services</h1>
-          <p className="text-lg text-center max-w-2xl mx-auto">We offer a comprehensive range of dental services to meet all your oral health needs.</p>
+      <div className="bg-gradient-to-b from-primary/5 via-[#e8f5ff] to-white py-24 relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute top-20 right-[10%] w-64 h-64 rounded-full bg-[#36B5A6]/10 blur-3xl"></div>
+        <div className="absolute bottom-0 left-[10%] w-80 h-80 rounded-full bg-[#00ADDD]/10 blur-3xl"></div>
+        
+        <div className="container mx-auto px-4 max-w-6xl relative z-10">
+          <div className="text-center">
+            <div className="inline-block px-3 py-1 bg-primary/10 text-primary font-medium rounded-full text-sm mb-4">
+              Expert Dental Care
+            </div>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">Our Dental Services</h1>
+            <p className="text-lg text-center max-w-2xl mx-auto text-neutral-600">We offer a comprehensive range of dental services using the latest technology to provide you with exceptional oral healthcare.</p>
+          </div>
         </div>
       </div>
       
-      <div className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+      <div className="py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-6xl">
           {isLoading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[...Array(6)].map((_, i) => (
-                <Card key={i} className="border-neutral-200 overflow-hidden animate-pulse">
-                  <div className="bg-gradient-to-br from-primary/5 to-primary/15 h-full flex flex-col">
-                    <CardHeader>
+                <Card key={i} className="border-0 rounded-2xl overflow-hidden animate-pulse">
+                  <div className="bg-gradient-to-br from-[#E8F5FF] to-[#C5E8FF] h-full flex flex-col">
+                    <CardHeader className="pb-2">
                       <div className="mb-4 flex">
-                        <div className="h-16 w-16 rounded-full bg-neutral-200"></div>
+                        <div className="h-16 w-16 rounded-full bg-white/60 shadow-md"></div>
                       </div>
-                      <div className="h-6 w-32 bg-neutral-200 rounded"></div>
+                      <div className="h-7 w-40 bg-white/60 rounded-md"></div>
                     </CardHeader>
-                    <CardContent className="flex-grow">
-                      <div className="h-4 w-full bg-neutral-200 rounded mb-2"></div>
-                      <div className="h-4 w-full bg-neutral-200 rounded mb-2"></div>
-                      <div className="h-4 w-2/3 bg-neutral-200 rounded"></div>
+                    <CardContent className="flex-grow pt-2">
+                      <div className="h-4 w-full bg-white/60 rounded-md mb-3"></div>
+                      <div className="h-4 w-full bg-white/60 rounded-md mb-3"></div>
+                      <div className="h-4 w-full bg-white/60 rounded-md mb-3"></div>
+                      <div className="h-4 w-2/3 bg-white/60 rounded-md"></div>
                     </CardContent>
-                    <CardFooter className="justify-end pb-4">
-                      <div className="h-4 w-24 bg-neutral-200 rounded"></div>
+                    <CardFooter className="justify-end pb-5">
+                      <div className="h-5 w-24 bg-white/60 rounded-md"></div>
                     </CardFooter>
                   </div>
                 </Card>
@@ -92,22 +102,41 @@ export default function Services() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services?.map((service) => (
-                <Card key={service.id} className="border-neutral-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:translate-y-[-5px]">
-                  <div className="bg-gradient-to-br from-primary/5 to-primary/15 h-full flex flex-col">
-                    <CardHeader>
+                <Card key={service.id} className="border-0 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:translate-y-[-5px] group">
+                  <div className="bg-gradient-to-br from-[#E8F5FF] to-[#C5E8FF] h-full flex flex-col">
+                    <CardHeader className="pb-2">
                       <div className="mb-4 flex">
-                        <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center border-2 border-primary/20 shadow-sm">
-                          {getServiceIcon(service.icon)}
+                        <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center border-2 border-primary/20 shadow-md group-hover:shadow-lg group-hover:border-primary/40 transition-all duration-300">
+                          {(() => {
+                            switch (service.icon) {
+                              case 'tooth':
+                                return <Stethoscope className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />;
+                              case 'teeth':
+                                return <Sparkles className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />;
+                              case 'teeth-open':
+                                return <Stethoscope className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />;
+                              case 'clipboard-check':
+                                return <FileCheck className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />;
+                              case 'align-left':
+                                return <AlignLeft className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />;
+                              case 'first-aid':
+                                return <AlertTriangle className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />;
+                              case 'magic-wand-sparkles':
+                                return <Syringe className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />;
+                              default:
+                                return <Stethoscope className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />;
+                            }
+                          })()}
                         </div>
                       </div>
-                      <CardTitle className="text-xl font-semibold">{service.name}</CardTitle>
+                      <CardTitle className="text-xl font-semibold text-primary">{service.name}</CardTitle>
                     </CardHeader>
-                    <CardContent className="flex-grow">
-                      <CardDescription className="text-neutral-700">{service.description}</CardDescription>
+                    <CardContent className="flex-grow pt-2">
+                      <p className="text-neutral-600">{service.description}</p>
                     </CardContent>
-                    <CardFooter className="justify-end pb-4">
-                      <Link href="/booking" className="text-primary font-medium hover:underline flex items-center">
-                        Book Now <span className="ml-2">→</span>
+                    <CardFooter className="justify-end pb-5">
+                      <Link href="/booking" className="text-primary font-medium hover:text-primary/80 flex items-center group-hover:underline">
+                        Book Now <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                       </Link>
                     </CardFooter>
                   </div>

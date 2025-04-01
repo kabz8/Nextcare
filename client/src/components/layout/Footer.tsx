@@ -11,21 +11,21 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center mb-4">
-              <Stethoscope className="h-8 w-8 text-brand-teal mr-2" />
+              <Stethoscope className="h-8 w-8 text-white mr-2" />
               <span className="text-white font-bold text-xl">Nextcare Dental Studio</span>
             </div>
             <p className="mb-4 text-neutral-300">Providing exceptional dental care in a comfortable environment since 2005.</p>
             <div className="flex space-x-4">
-              <a href="#" className="text-neutral-400 hover:text-white transition-colors">
+              <a href="#" className="text-white hover:text-brand-teal transition-colors">
                 <FaFacebookF size={18} />
               </a>
-              <a href="#" className="text-neutral-400 hover:text-white transition-colors">
+              <a href="#" className="text-white hover:text-brand-teal transition-colors">
                 <FaInstagram size={18} />
               </a>
-              <a href="#" className="text-neutral-400 hover:text-white transition-colors">
+              <a href="#" className="text-white hover:text-brand-teal transition-colors">
                 <FaTwitter size={18} />
               </a>
-              <a href="#" className="text-neutral-400 hover:text-white transition-colors">
+              <a href="#" className="text-white hover:text-brand-teal transition-colors">
                 <FaYoutube size={18} />
               </a>
             </div>
@@ -34,19 +34,19 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-4">Contact Us</h4>
             <div className="mb-2 flex items-start">
-              <MapPin className="h-5 w-5 mt-1 mr-3 text-brand-teal flex-shrink-0" />
+              <MapPin className="h-5 w-5 mt-1 mr-3 text-white flex-shrink-0" />
               <span className="text-neutral-300">123 Kenyatta Avenue<br />Nairobi, Kenya</span>
             </div>
             <div className="mb-2 flex items-center">
-              <Phone className="h-5 w-5 mr-3 text-brand-teal flex-shrink-0" />
+              <Phone className="h-5 w-5 mr-3 text-white flex-shrink-0" />
               <span className="text-neutral-300">+254 722 123456</span>
             </div>
             <div className="mb-2 flex items-center">
-              <Mail className="h-5 w-5 mr-3 text-brand-teal flex-shrink-0" />
+              <Mail className="h-5 w-5 mr-3 text-white flex-shrink-0" />
               <span className="text-neutral-300">info@nextcaredentalstudio.com</span>
             </div>
             <div className="mb-2 flex items-center">
-              <Clock className="h-5 w-5 mr-3 text-brand-teal flex-shrink-0" />
+              <Clock className="h-5 w-5 mr-3 text-white flex-shrink-0" />
               <span className="text-neutral-300">Mon-Fri: 8am-6pm, Sat: 9am-2pm</span>
             </div>
           </div>
@@ -97,8 +97,8 @@ export default function Footer() {
                   placeholder="Your email"
                   className="rounded-r-none text-neutral-900 focus-visible:ring-primary"
                 />
-                <Button type="submit" className="rounded-l-none px-4">
-                  <Mail className="h-4 w-4" />
+                <Button type="submit" className="rounded-l-none px-4 bg-brand-teal hover:bg-brand-teal/90">
+                  <Mail className="h-4 w-4 text-white" />
                 </Button>
               </div>
             </form>

@@ -9,7 +9,7 @@ export default function HeroSection() {
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-12 md:mb-0">
             <div className="inline-block bg-brand-blue/10 text-brand-blue font-medium px-4 py-2 rounded-full mb-4">
-              Leading Dental Care in Nairobi
+              Leading Dental Service in Kenya
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-blue mb-6 leading-tight">
               Your <span className="text-brand-light-blue">Smile</span> Is Our <span className="text-brand-teal">Priority</span>

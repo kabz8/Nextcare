@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Stethoscope } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import logoPath from "../../assets/logo.png";
+import iconPath from "../../assets/icon.png";
 
 export default function Header() {
   const [location] = useLocation();
@@ -21,8 +23,7 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
-            <Stethoscope className="h-8 w-8 text-brand-blue mr-2" />
-            <span className="text-neutral-900 font-bold text-xl md:text-2xl">Nextcare Dental Studio</span>
+            <img src={logoPath} alt="Nextcare Dental Studio" className="h-12" />
           </Link>
         </div>
         
@@ -57,8 +58,8 @@ export default function Header() {
               <div className="flex flex-col h-full">
                 <div className="flex justify-between items-center mb-8 py-4">
                   <div className="flex items-center">
-                    <Stethoscope className="h-6 w-6 text-brand-blue mr-2" />
-                    <span className="text-neutral-900 font-bold text-xl">Nextcare Dental Studio</span>
+                    <img src={iconPath} alt="Nextcare Dental Icon" className="h-8 mr-2" />
+                    <span className="text-neutral-900 font-bold text-xl">Nextcare Dental</span>
                   </div>
                   <Button 
                     variant="ghost" 

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
   return (
-    <section className="bg-gradient-to-r from-primary/10 to-green-100 py-16">
+    <section className="bg-brand-gradient-light py-16">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 mb-8 md:mb-0">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">Professional Dental Care for Your Family</h1>

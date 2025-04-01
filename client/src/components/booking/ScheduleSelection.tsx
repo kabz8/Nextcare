@@ -111,10 +111,10 @@ export default function ScheduleSelection({ bookingData, onScheduleSelect, onBac
         
         {selectedDate && (
           <>
-            <Alert variant="warning" className="mb-6">
+            <Alert className="mb-6">
               <AlertTriangle className="h-4 w-4" />
               <AlertDescription>
-                These open appointments are in a different time zone: MDT
+                All appointment times are in East African Time (EAT)
               </AlertDescription>
             </Alert>
             

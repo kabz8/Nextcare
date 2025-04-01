@@ -148,9 +148,49 @@ export class MemStorage implements IStorage {
   }
   
   async getAvailableTimeSlots(date: string): Promise<TimeSlot[]> {
-    return Array.from(this.timeSlots.values()).filter(
+    // First check if we already have slots for this date
+    const existingSlots = Array.from(this.timeSlots.values()).filter(
       (slot) => slot.date === date && slot.available
     );
+    
+    // If we have slots, return them
+    if (existingSlots.length > 0) {
+      return existingSlots;
+    }
+    
+    // If no slots exist for this date, generate them on demand
+    // (only for non-weekend days)
+    const requestedDate = new Date(date);
+    const dayOfWeek = requestedDate.getDay();
+    
+    // Skip slot generation for weekends
+    if (dayOfWeek === 0 || dayOfWeek === 6) {
+      return [];
+    }
+    
+    // Generate time slots from 8:00 AM to 5:30 PM with 30-minute intervals
+    const newSlots: TimeSlot[] = [];
+    for (let hour = 8; hour <= 17; hour++) {
+      for (let minute = 0; minute < 60; minute += 30) {
+        // Skip lunch hour (1:00 PM to 2:00 PM)
+        if (hour === 13) continue;
+        
+        const hourDisplay = hour % 12 === 0 ? 12 : hour % 12;
+        const amPm = hour < 12 ? "AM" : "PM";
+        const minuteDisplay = minute === 0 ? "00" : minute;
+        const time = `${hourDisplay}:${minuteDisplay} ${amPm}`;
+        
+        const newSlot = await this.createTimeSlot({
+          date,
+          time,
+          available: true
+        });
+        
+        newSlots.push(newSlot);
+      }
+    }
+    
+    return newSlots;
   }
   
   async createTimeSlot(timeSlot: InsertTimeSlot): Promise<TimeSlot> {
@@ -259,16 +299,27 @@ export class MemStorage implements IStorage {
   private seedTimeSlots() {
     // Create available time slots for the next 30 days
     const today = new Date();
-    const times = [
-      "8:30 AM", "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM", 
-      "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM", "2:30 PM"
-    ];
     
-    for (let i = 1; i <= 30; i++) {
+    // Generate time slots from 8:00 AM to 5:30 PM with 30-minute intervals
+    const times: string[] = [];
+    for (let hour = 8; hour <= 17; hour++) {
+      for (let minute = 0; minute < 60; minute += 30) {
+        // Skip lunch hour (1:00 PM to 2:00 PM)
+        if (hour === 13) continue;
+        
+        const hourDisplay = hour % 12 === 0 ? 12 : hour % 12;
+        const amPm = hour < 12 ? "AM" : "PM";
+        const minuteDisplay = minute === 0 ? "00" : minute;
+        times.push(`${hourDisplay}:${minuteDisplay} ${amPm}`);
+      }
+    }
+    
+    // Generate slots for today and the next 60 days
+    for (let i = 0; i <= 60; i++) {
       const futureDate = new Date(today);
       futureDate.setDate(today.getDate() + i);
       
-      // Skip weekends
+      // Skip weekends (Saturday = 6, Sunday = 0)
       if (futureDate.getDay() === 0 || futureDate.getDay() === 6) {
         continue;
       }
@@ -284,13 +335,15 @@ export class MemStorage implements IStorage {
       });
     }
     
-    // Explicitly add the time slots shown in the mockup (April 1, 2025)
-    const mockupDate = "2025-04-01";
-    times.forEach(time => {
-      this.createTimeSlot({
-        date: mockupDate,
-        time: time,
-        available: true
+    // Additionally add time slots for specific dates in the UI mockups
+    const mockupDates = ["2025-04-01", "2025-04-02", "2025-04-03"];
+    mockupDates.forEach(mockupDate => {
+      times.forEach(time => {
+        this.createTimeSlot({
+          date: mockupDate,
+          time: time,
+          available: true
+        });
       });
     });
   }

@@ -21,8 +21,8 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
-            <Stethoscope className="h-8 w-8 text-primary mr-2" />
-            <span className="text-neutral-900 font-bold text-xl md:text-2xl">Village Dental</span>
+            <Stethoscope className="h-8 w-8 text-brand-blue mr-2" />
+            <span className="text-neutral-900 font-bold text-xl md:text-2xl">Nextcare Dental Studio</span>
           </Link>
         </div>
         
@@ -31,8 +31,8 @@ export default function Header() {
             <Link 
               key={link.name} 
               href={link.href}
-              className={`font-medium hover:text-primary transition-colors ${
-                location === link.href ? 'text-primary' : 'text-neutral-700'
+              className={`font-medium hover:text-brand-light-blue transition-colors ${
+                location === link.href ? 'text-brand-blue' : 'text-neutral-700'
               }`}
             >
               {link.name}
@@ -57,8 +57,8 @@ export default function Header() {
               <div className="flex flex-col h-full">
                 <div className="flex justify-between items-center mb-8 py-4">
                   <div className="flex items-center">
-                    <Stethoscope className="h-6 w-6 text-primary mr-2" />
-                    <span className="text-neutral-900 font-bold text-xl">Village Dental</span>
+                    <Stethoscope className="h-6 w-6 text-brand-blue mr-2" />
+                    <span className="text-neutral-900 font-bold text-xl">Nextcare Dental Studio</span>
                   </div>
                   <Button 
                     variant="ghost" 
@@ -75,8 +75,8 @@ export default function Header() {
                       key={link.name} 
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className={`px-4 py-2 font-medium hover:bg-primary-100 rounded-md ${
-                        location === link.href ? 'text-primary' : 'text-neutral-700'
+                      className={`px-4 py-2 font-medium hover:bg-brand-light-blue/10 rounded-md ${
+                        location === link.href ? 'text-brand-blue' : 'text-neutral-700'
                       }`}
                     >
                       {link.name}

@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Village Dental - Professional Dental Care</title>
-        <meta name="description" content="Village Dental provides professional dental care services including teeth whitening, cosmetic dentistry, dental implants, and more." />
+        <title>Nextcare Dental Studio - Professional Dental Care in Nairobi</title>
+        <meta name="description" content="Nextcare Dental Studio provides professional dental care services in Nairobi, Kenya including teeth whitening, cosmetic dentistry, dental implants, and more." />
       </Helmet>
       <HeroSection />
       <ServicesSection />

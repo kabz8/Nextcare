@@ -42,8 +42,8 @@ export default function Services() {
   return (
     <>
       <Helmet>
-        <title>Our Services - Village Dental</title>
-        <meta name="description" content="Learn about the comprehensive dental services we offer at Village Dental including preventive, cosmetic, and restorative dental care." />
+        <title>Our Services - Nextcare Dental Studio Kenya</title>
+        <meta name="description" content="Learn about the comprehensive dental services we offer at Nextcare Dental Studio in Nairobi, Kenya including preventive, cosmetic, and restorative dental care." />
       </Helmet>
       
       <div className="bg-gradient-to-r from-primary/10 to-green-100 py-16">

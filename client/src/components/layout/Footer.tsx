@@ -6,13 +6,13 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-900 text-white py-12">
+    <footer className="bg-brand-blue text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center mb-4">
-              <Stethoscope className="h-8 w-8 text-primary mr-2" />
-              <span className="text-white font-bold text-xl">Village Dental</span>
+              <Stethoscope className="h-8 w-8 text-brand-teal mr-2" />
+              <span className="text-white font-bold text-xl">Nextcare Dental Studio</span>
             </div>
             <p className="mb-4 text-neutral-300">Providing exceptional dental care in a comfortable environment since 2005.</p>
             <div className="flex space-x-4">
@@ -34,19 +34,19 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-4">Contact Us</h4>
             <div className="mb-2 flex items-start">
-              <MapPin className="h-5 w-5 mt-1 mr-3 text-primary flex-shrink-0" />
-              <span className="text-neutral-300">123 Dental Drive<br />Denver, CO 80202</span>
+              <MapPin className="h-5 w-5 mt-1 mr-3 text-brand-teal flex-shrink-0" />
+              <span className="text-neutral-300">123 Kenyatta Avenue<br />Nairobi, Kenya</span>
             </div>
             <div className="mb-2 flex items-center">
-              <Phone className="h-5 w-5 mr-3 text-primary flex-shrink-0" />
-              <span className="text-neutral-300">(555) 123-4567</span>
+              <Phone className="h-5 w-5 mr-3 text-brand-teal flex-shrink-0" />
+              <span className="text-neutral-300">+254 722 123456</span>
             </div>
             <div className="mb-2 flex items-center">
-              <Mail className="h-5 w-5 mr-3 text-primary flex-shrink-0" />
-              <span className="text-neutral-300">info@villagedentalco.com</span>
+              <Mail className="h-5 w-5 mr-3 text-brand-teal flex-shrink-0" />
+              <span className="text-neutral-300">info@nextcaredentalstudio.com</span>
             </div>
             <div className="mb-2 flex items-center">
-              <Clock className="h-5 w-5 mr-3 text-primary flex-shrink-0" />
+              <Clock className="h-5 w-5 mr-3 text-brand-teal flex-shrink-0" />
               <span className="text-neutral-300">Mon-Fri: 8am-6pm, Sat: 9am-2pm</span>
             </div>
           </div>
@@ -55,32 +55,32 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-neutral-300 hover:text-primary transition-colors">
+                <Link href="/" className="text-neutral-300 hover:text-brand-teal transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-neutral-300 hover:text-primary transition-colors">
+                <Link href="/services" className="text-neutral-300 hover:text-brand-teal transition-colors">
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/team" className="text-neutral-300 hover:text-primary transition-colors">
+                <Link href="/team" className="text-neutral-300 hover:text-brand-teal transition-colors">
                   Our Team
                 </Link>
               </li>
               <li>
-                <Link href="/patient-info" className="text-neutral-300 hover:text-primary transition-colors">
+                <Link href="/patient-info" className="text-neutral-300 hover:text-brand-teal transition-colors">
                   Patient Forms
                 </Link>
               </li>
               <li>
-                <Link href="/insurance" className="text-neutral-300 hover:text-primary transition-colors">
+                <Link href="/insurance" className="text-neutral-300 hover:text-brand-teal transition-colors">
                   Insurance
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-neutral-300 hover:text-primary transition-colors">
+                <Link href="/contact" className="text-neutral-300 hover:text-brand-teal transition-colors">
                   Contact
                 </Link>
               </li>
@@ -108,9 +108,9 @@ export default function Footer() {
         
         <div className="border-t border-neutral-800 mt-8 pt-8 text-center text-sm text-neutral-400">
           <p>
-            &copy; {new Date().getFullYear()} Village Dental. All rights reserved. | 
-            <a href="#" className="hover:text-primary transition-colors ml-1">Privacy Policy</a> | 
-            <a href="#" className="hover:text-primary transition-colors ml-1">Terms of Service</a>
+            &copy; {new Date().getFullYear()} Nextcare Dental Studio. All rights reserved. | 
+            <a href="#" className="hover:text-brand-teal transition-colors ml-1">Privacy Policy</a> | 
+            <a href="#" className="hover:text-brand-teal transition-colors ml-1">Terms of Service</a>
           </p>
         </div>
       </div>

@@ -3,7 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { FaShieldAlt, FaCheckCircle, FaInfoCircle, FaUserMd } from "react-icons/fa";
 import { Shield, Check, Info, ShieldCheck, Heart, Users } from "lucide-react";
-import insuranceLogosPath from '@assets/image_1743504900340.png';
 
 // Updated insurance partners based on the logos image
 const insurancePartners = [
@@ -82,18 +81,6 @@ export default function Insurance() {
       
       <div className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          {/* Insurance Logos Display */}
-          <div className="max-w-4xl mx-auto mb-16">
-            <h2 className="text-2xl font-bold mb-6 text-center">Our Insurance Partners</h2>
-            <div className="bg-white p-8 rounded-lg shadow-sm border border-neutral-100">
-              <img 
-                src={insuranceLogosPath} 
-                alt="Our insurance partners" 
-                className="w-full h-auto object-contain"
-              />
-            </div>
-          </div>
-
           <div className="max-w-3xl mx-auto mb-12 text-center">
             <h2 className="text-2xl font-bold mb-4">We Accept Most Major Insurance Plans</h2>
             <p className="text-neutral-700 mb-6">

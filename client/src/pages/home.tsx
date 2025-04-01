@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import HeroSection from "@/components/home/HeroSection";
 import ServicesSection from "@/components/home/ServicesSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
+import InsurancePartnersSection from "@/components/home/InsurancePartnersSection";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <HeroSection />
       <ServicesSection />
       <TestimonialsSection />
+      <InsurancePartnersSection />
     </>
   );
 }

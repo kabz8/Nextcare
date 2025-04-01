@@ -6,6 +6,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Services from "@/pages/services";
 import Booking from "@/pages/booking";
+import Contact from "@/pages/contact";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { CalendarProvider } from "@/lib/CalendarContext";
@@ -19,6 +20,7 @@ function Router() {
           <Route path="/" component={Home} />
           <Route path="/services" component={Services} />
           <Route path="/booking" component={Booking} />
+          <Route path="/contact" component={Contact} />
           <Route component={NotFound} />
         </Switch>
       </main>

@@ -59,8 +59,8 @@ export default function ServicesSection() {
         {isLoading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[...Array(6)].map((_, i) => (
-              <Card key={i} className="border-0 rounded-2xl overflow-hidden group">
-                <div className="bg-gradient-to-br from-[#E8F5FF] to-[#C5E8FF] h-full flex flex-col">
+              <Card key={i} className="card-gradient rounded-2xl overflow-hidden group">
+                <div className="h-full flex flex-col">
                   <CardHeader className="pb-2">
                     <div className="mb-4 flex">
                       <Skeleton className="h-16 w-16 rounded-full" />
@@ -87,8 +87,8 @@ export default function ServicesSection() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {mainServices?.map((service) => (
-              <Card key={service.id} className="border-0 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:translate-y-[-5px] group">
-                <div className="bg-gradient-to-br from-[#E8F5FF] to-[#C5E8FF] h-full flex flex-col">
+              <Card key={service.id} className="card-gradient rounded-2xl overflow-hidden group">
+                <div className="h-full flex flex-col">
                   <CardHeader className="pb-2">
                     <div className="mb-4 flex">
                       <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center border-2 border-primary/20 shadow-md group-hover:shadow-lg group-hover:border-primary/40 transition-all duration-300">

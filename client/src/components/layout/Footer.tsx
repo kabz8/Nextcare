@@ -8,7 +8,7 @@ import logoPath from "../../assets/logo.png";
 export default function Footer() {
   return (
     <footer className="bg-brand-blue text-white py-12">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="mb-4">

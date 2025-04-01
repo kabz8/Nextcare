@@ -12,6 +12,10 @@ export default function Home() {
         <meta name="description" content="Nextcare Dental Studio provides professional dental care services in Nairobi, Kenya including teeth whitening, cosmetic dentistry, dental implants, and more." />
       </Helmet>
       <HeroSection />
+      
+      {/* Gradient transition div */}
+      <div className="h-32 bg-gradient-to-b from-[#e6f7fc] to-white"></div>
+      
       <ServicesSection />
       <TestimonialsSection />
       <InsurancePartnersSection />

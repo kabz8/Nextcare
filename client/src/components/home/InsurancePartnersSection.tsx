@@ -21,13 +21,7 @@ export default function InsurancePartnersSection() {
     { name: "UAP Old Mutual", logo: "uap-old-mutual.svg" },
     { name: "NHIF", logo: "nhif.svg" },
     { name: "Britam", logo: "britam.svg" },
-    { name: "CIC Insurance", logo: "cic-insurance.svg" },
-    { name: "APA Insurance", logo: "apa-insurance.svg" },
-    { name: "Heritage Insurance", logo: "heritage-insurance.svg" },
-    { name: "Sanlam", logo: "sanlam.svg" },
-    { name: "Madison Insurance", logo: "madison-insurance.svg" },
-    { name: "Resolution Insurance", logo: "resolution-insurance.svg" },
-    { name: "ICEA Lion", logo: "icea-lion.svg" }
+    { name: "CIC Insurance", logo: "cic-insurance.svg" }
   ];
 
   // Use generic health/insurance icons from react-icons
@@ -42,7 +36,7 @@ export default function InsurancePartnersSection() {
 
   return (
     <section className="py-16 bg-white border-t border-neutral-100">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 max-w-5xl">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold text-primary mb-4">Our Insurance Partners</h2>
           <p className="text-lg text-neutral-700 max-w-2xl mx-auto">
@@ -51,7 +45,7 @@ export default function InsurancePartnersSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 justify-items-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
           {/* Display international insurance icons */}
           {iconPartners.map((partner) => (
             <a href="/insurance" key={partner.name} className="flex flex-col items-center justify-center p-4 rounded-xl hover:bg-neutral-50 transition-colors cursor-pointer">

@@ -2,15 +2,17 @@ import { Helmet } from "react-helmet";
 import { Link } from "wouter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Mail } from "lucide-react";
-import { FaLinkedin, FaFacebookSquare, FaTwitterSquare } from "react-icons/fa";
+import { Mail, UserCircle } from "lucide-react";
+import { FaLinkedin, FaFacebookSquare, FaTwitterSquare, FaUserMd, FaUserNurse, FaUser } from "react-icons/fa";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 const teamMembers = [
   {
     id: 1,
     name: "Dr. Branice Munyasa",
     role: "Lead Dentist / Founder",
-    image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=400&h=400&fit=crop&q=80",
+    initials: "BM",
+    icon: FaUserMd,
     description: "Dr. Munyasa has over 15 years of experience in cosmetic and restorative dentistry. She earned her degree from the University of Nairobi and has been serving the community with exceptional dental care.",
     specialties: ["Cosmetic Dentistry", "Dental Implants", "Orthodontics"]
   },
@@ -18,7 +20,8 @@ const teamMembers = [
     id: 2,
     name: "Dr. Samuel Otieno",
     role: "Senior Dentist",
-    image: "https://images.unsplash.com/photo-1613918108466-292b78a8ef95?w=400&h=400&fit=crop&q=80",
+    initials: "SO",
+    icon: FaUserMd,
     description: "Dr. Otieno specializes in pediatric dentistry and orthodontics. With a gentle approach and a warm smile, he makes dental visits enjoyable for children and adults alike.",
     specialties: ["Pediatric Dentistry", "Orthodontics", "Preventive Care"]
   },
@@ -26,7 +29,8 @@ const teamMembers = [
     id: 3,
     name: "Dr. Esther Ndungu",
     role: "Cosmetic Specialist",
-    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop&q=80",
+    initials: "EN",
+    icon: FaUserMd,
     description: "Dr. Ndungu is passionate about transforming smiles through cosmetic dentistry. She has advanced training in teeth whitening, veneers, and smile makeovers.",
     specialties: ["Teeth Whitening", "Veneers", "Smile Design"]
   },
@@ -34,7 +38,8 @@ const teamMembers = [
     id: 4,
     name: "Nancy Ochieng",
     role: "Dental Hygienist",
-    image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=400&fit=crop&q=80",
+    initials: "NO",
+    icon: FaUserNurse,
     description: "Nancy is a certified dental hygienist with 8 years of experience. She is dedicated to helping patients maintain excellent oral health through proper cleaning and education.",
     specialties: ["Professional Cleaning", "Oral Health Education", "Preventive Care"]
   },
@@ -42,7 +47,8 @@ const teamMembers = [
     id: 5,
     name: "George Mutua",
     role: "Dental Assistant",
-    image: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=400&h=400&fit=crop&q=80",
+    initials: "GM",
+    icon: FaUserNurse,
     description: "George assists our dentists in providing efficient and comfortable treatment. His attention to detail and caring nature helps create a positive experience for every patient.",
     specialties: ["Patient Care", "Treatment Assistance", "Sterilization"]
   },
@@ -50,7 +56,8 @@ const teamMembers = [
     id: 6,
     name: "Faith Wanjiru",
     role: "Office Manager",
-    image: "https://images.unsplash.com/photo-1573497019236-61e1a29bce98?w=400&h=400&fit=crop&q=80",
+    initials: "FW",
+    icon: FaUser,
     description: "Faith manages our front office operations and ensures everything runs smoothly. She coordinates appointments, handles insurance matters, and welcomes patients with a friendly smile.",
     specialties: ["Scheduling", "Insurance Coordination", "Patient Relations"]
   }
@@ -77,12 +84,12 @@ export default function Team() {
             {teamMembers.map((member) => (
               <Card key={member.id} className="overflow-hidden hover:shadow-md transition-shadow max-w-sm mx-auto">
                 <div className="flex flex-row">
-                  <div className="w-1/3 overflow-hidden">
-                    <img 
-                      src={member.image} 
-                      alt={member.name} 
-                      className="object-cover w-full h-full transition-transform hover:scale-105"
-                    />
+                  <div className="w-1/3 flex items-center justify-center p-4 bg-primary/5">
+                    <Avatar className="h-20 w-20 border-2 border-primary/20">
+                      <AvatarFallback className="bg-primary/10 text-primary text-lg font-medium">
+                        {member.initials}
+                      </AvatarFallback>
+                    </Avatar>
                   </div>
                   <div className="w-2/3">
                     <CardHeader className="p-3 pb-0">

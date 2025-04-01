@@ -110,7 +110,7 @@ export default function Insurance() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {insurancePartners.map((partner) => (
-                <Card key={partner.id} className="border border-neutral-200 hover:shadow-md transition-shadow">
+                <Card key={partner.id} className="card-gradient border border-neutral-200 hover:shadow-md transition-shadow">
                   <CardHeader className="pb-2 flex flex-col items-center text-center">
                     <div className="mb-4 p-4 bg-primary/10 rounded-full">
                       <div className="h-12 w-12 flex items-center justify-center">
@@ -143,28 +143,28 @@ export default function Insurance() {
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
-              <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="card-gradient p-6 rounded-lg">
                 <h3 className="text-lg font-semibold mb-2">How do I know if my insurance covers my treatment?</h3>
                 <p className="text-neutral-700">
                   Our front desk team will verify your insurance coverage before your appointment. We'll explain what procedures are covered,
                   any applicable co-pays, and your estimated out-of-pocket expenses.
                 </p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="card-gradient p-6 rounded-lg">
                 <h3 className="text-lg font-semibold mb-2">What if my insurance doesn't cover a needed procedure?</h3>
                 <p className="text-neutral-700">
                   We offer various payment options and financing plans to make treatment affordable. Our team will work with you
                   to find a solution that fits your budget.
                 </p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="card-gradient p-6 rounded-lg">
                 <h3 className="text-lg font-semibold mb-2">Do you offer direct billing to insurance companies?</h3>
                 <p className="text-neutral-700">
                   Yes, we offer direct billing to most insurance providers. This means you only need to pay your portion
                   at the time of service, and we'll handle the insurance claim for you.
                 </p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="card-gradient p-6 rounded-lg">
                 <h3 className="text-lg font-semibold mb-2">What if I don't have dental insurance?</h3>
                 <p className="text-neutral-700">
                   We offer affordable self-pay rates and payment plans for patients without insurance. We believe everyone

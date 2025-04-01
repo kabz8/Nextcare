@@ -72,65 +72,67 @@ export default function Team() {
         <meta name="description" content="Meet our team of experienced dental professionals at Nextcare Dental Studio in Nairobi, Kenya. We're dedicated to providing you with excellent dental care." />
       </Helmet>
       
-      <PageHeader 
-        title="Our Dental Team" 
-        subtitle="Meet our team of experienced professionals dedicated to providing you with the best dental care." 
-        badge="Expert Staff"
-      />
-      
-      <div className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {teamMembers.map((member) => (
-              <Card key={member.id} className="overflow-hidden hover:shadow-md transition-shadow max-w-sm mx-auto">
-                <div className="flex flex-row">
-                  <div className="w-1/3 flex items-center justify-center p-4 bg-primary/5">
-                    <Avatar className="h-20 w-20 border-2 border-primary/20">
-                      <AvatarFallback className="bg-primary/10 text-primary text-lg font-medium">
-                        {member.initials}
-                      </AvatarFallback>
-                    </Avatar>
-                  </div>
-                  <div className="w-2/3">
-                    <CardHeader className="p-3 pb-0">
-                      <div className="space-y-0">
-                        <CardTitle className="text-lg font-bold">{member.name}</CardTitle>
-                        <p className="text-primary text-sm font-medium">{member.role}</p>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="p-3 pt-2">
-                      <div className="mb-2">
-                        <div className="flex flex-wrap gap-1 mb-2">
-                          {member.specialties.map((specialty, index) => (
-                            <span 
-                              key={index} 
-                              className="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full"
-                            >
-                              {specialty}
-                            </span>
-                          ))}
+      <div className="page-gradient">
+        <PageHeader 
+          title="Our Dental Team" 
+          subtitle="Meet our team of experienced professionals dedicated to providing you with the best dental care." 
+          badge="Expert Staff"
+        />
+        
+        <div className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {teamMembers.map((member) => (
+                <Card key={member.id} className="card-gradient overflow-hidden hover:shadow-md transition-shadow max-w-sm mx-auto">
+                  <div className="flex flex-row">
+                    <div className="w-1/3 flex items-center justify-center p-4 bg-primary/5">
+                      <Avatar className="h-20 w-20 border-2 border-primary/20">
+                        <AvatarFallback className="bg-primary/10 text-primary text-lg font-medium">
+                          {member.initials}
+                        </AvatarFallback>
+                      </Avatar>
+                    </div>
+                    <div className="w-2/3">
+                      <CardHeader className="p-3 pb-0">
+                        <div className="space-y-0">
+                          <CardTitle className="text-lg font-bold">{member.name}</CardTitle>
+                          <p className="text-primary text-sm font-medium">{member.role}</p>
                         </div>
-                      </div>
-                      
-                      <div className="flex space-x-1 justify-start">
-                        <Button size="sm" variant="ghost" className="rounded-full w-7 h-7 p-0 text-neutral-600 hover:text-primary hover:bg-primary/10">
-                          <FaLinkedin size={14} />
-                        </Button>
-                        <Button size="sm" variant="ghost" className="rounded-full w-7 h-7 p-0 text-neutral-600 hover:text-primary hover:bg-primary/10">
-                          <Mail size={14} />
-                        </Button>
-                      </div>
-                    </CardContent>
+                      </CardHeader>
+                      <CardContent className="p-3 pt-2">
+                        <div className="mb-2">
+                          <div className="flex flex-wrap gap-1 mb-2">
+                            {member.specialties.map((specialty, index) => (
+                              <span 
+                                key={index} 
+                                className="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full"
+                              >
+                                {specialty}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                        
+                        <div className="flex space-x-1 justify-start">
+                          <Button size="sm" variant="ghost" className="rounded-full w-7 h-7 p-0 text-neutral-600 hover:text-primary hover:bg-primary/10">
+                            <FaLinkedin size={14} />
+                          </Button>
+                          <Button size="sm" variant="ghost" className="rounded-full w-7 h-7 p-0 text-neutral-600 hover:text-primary hover:bg-primary/10">
+                            <Mail size={14} />
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </div>
                   </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-          
-          <div className="mt-12 text-center">
-            <Button className="px-6 py-2 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors">
-              Meet Our Entire Team
-            </Button>
+                </Card>
+              ))}
+            </div>
+            
+            <div className="mt-12 text-center">
+              <Button className="px-6 py-2 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors">
+                Meet Our Entire Team
+              </Button>
+            </div>
           </div>
         </div>
       </div>

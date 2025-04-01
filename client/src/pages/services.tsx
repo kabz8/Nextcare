@@ -2,8 +2,7 @@ import { Helmet } from "react-helmet";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { Service } from "@shared/schema";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import PageHeader from "@/components/layout/PageHeader";
 import { 
   Stethoscope,
@@ -53,88 +52,90 @@ export default function Services() {
         <meta name="description" content="Learn about the comprehensive dental services we offer at Nextcare Dental Studio in Nairobi, Kenya including preventive, cosmetic, and restorative dental care." />
       </Helmet>
       
-      <PageHeader 
-        title="Our Dental Services" 
-        subtitle="We offer a comprehensive range of dental services using the latest technology to provide you with exceptional oral healthcare."
-        badge="Expert Dental Care"
-      />
-      
-      <div className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-6xl">
-          {isLoading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[...Array(6)].map((_, i) => (
-                <Card key={i} className="border-0 rounded-2xl overflow-hidden animate-pulse">
-                  <div className="bg-gradient-to-br from-[#E8F5FF] to-[#C5E8FF] h-full flex flex-col">
-                    <CardHeader className="pb-2">
-                      <div className="mb-4 flex">
-                        <div className="h-16 w-16 rounded-full bg-white/60 shadow-md"></div>
-                      </div>
-                      <div className="h-7 w-40 bg-white/60 rounded-md"></div>
-                    </CardHeader>
-                    <CardContent className="flex-grow pt-2">
-                      <div className="h-4 w-full bg-white/60 rounded-md mb-3"></div>
-                      <div className="h-4 w-full bg-white/60 rounded-md mb-3"></div>
-                      <div className="h-4 w-full bg-white/60 rounded-md mb-3"></div>
-                      <div className="h-4 w-2/3 bg-white/60 rounded-md"></div>
-                    </CardContent>
-                    <CardFooter className="justify-end pb-5">
-                      <div className="h-5 w-24 bg-white/60 rounded-md"></div>
-                    </CardFooter>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          ) : error ? (
-            <div className="text-center py-12">
-              <h3 className="text-xl font-semibold text-red-500 mb-2">Error Loading Services</h3>
-              <p>Unable to load our services at this time. Please try again later.</p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {services?.map((service) => (
-                <Card key={service.id} className="border-0 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:translate-y-[-5px] group">
-                  <div className="bg-gradient-to-br from-[#E8F5FF] to-[#C5E8FF] h-full flex flex-col">
-                    <CardHeader className="pb-2">
-                      <div className="mb-4 flex">
-                        <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center border-2 border-primary/20 shadow-md group-hover:shadow-lg group-hover:border-primary/40 transition-all duration-300">
-                          {(() => {
-                            switch (service.icon) {
-                              case 'tooth':
-                                return <Stethoscope className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />;
-                              case 'teeth':
-                                return <Sparkles className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />;
-                              case 'teeth-open':
-                                return <Stethoscope className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />;
-                              case 'clipboard-check':
-                                return <FileCheck className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />;
-                              case 'align-left':
-                                return <AlignLeft className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />;
-                              case 'first-aid':
-                                return <AlertTriangle className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />;
-                              case 'magic-wand-sparkles':
-                                return <Syringe className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />;
-                              default:
-                                return <Stethoscope className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />;
-                            }
-                          })()}
+      <div className="page-gradient">
+        <PageHeader 
+          title="Our Dental Services" 
+          subtitle="We offer a comprehensive range of dental services using the latest technology to provide you with exceptional oral healthcare."
+          badge="Expert Dental Care"
+        />
+        
+        <div className="py-20">
+          <div className="container mx-auto px-4 max-w-6xl">
+            {isLoading ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {[...Array(6)].map((_, i) => (
+                  <Card key={i} className="card-gradient border-0 rounded-2xl overflow-hidden animate-pulse">
+                    <div className="bg-gradient-to-br from-[#E8F5FF] to-[#C5E8FF] h-full flex flex-col">
+                      <CardHeader className="pb-2">
+                        <div className="mb-4 flex">
+                          <div className="h-16 w-16 rounded-full bg-white/60 shadow-md"></div>
                         </div>
-                      </div>
-                      <CardTitle className="text-xl font-semibold text-primary">{service.name}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="flex-grow pt-2">
-                      <p className="text-neutral-600">{service.description}</p>
-                    </CardContent>
-                    <CardFooter className="justify-end pb-5">
-                      <Link href="/booking" className="text-primary font-medium hover:text-primary/80 flex items-center group-hover:underline">
-                        Book Now <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
-                      </Link>
-                    </CardFooter>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          )}
+                        <div className="h-7 w-40 bg-white/60 rounded-md"></div>
+                      </CardHeader>
+                      <CardContent className="flex-grow pt-2">
+                        <div className="h-4 w-full bg-white/60 rounded-md mb-3"></div>
+                        <div className="h-4 w-full bg-white/60 rounded-md mb-3"></div>
+                        <div className="h-4 w-full bg-white/60 rounded-md mb-3"></div>
+                        <div className="h-4 w-2/3 bg-white/60 rounded-md"></div>
+                      </CardContent>
+                      <CardFooter className="justify-end pb-5">
+                        <div className="h-5 w-24 bg-white/60 rounded-md"></div>
+                      </CardFooter>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            ) : error ? (
+              <div className="text-center py-12">
+                <h3 className="text-xl font-semibold text-red-500 mb-2">Error Loading Services</h3>
+                <p>Unable to load our services at this time. Please try again later.</p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {services?.map((service) => (
+                  <Card key={service.id} className="card-gradient border-0 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:translate-y-[-5px] group">
+                    <div className="bg-gradient-to-br from-[#E8F5FF] to-[#C5E8FF] h-full flex flex-col">
+                      <CardHeader className="pb-2">
+                        <div className="mb-4 flex">
+                          <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center border-2 border-primary/20 shadow-md group-hover:shadow-lg group-hover:border-primary/40 transition-all duration-300">
+                            {(() => {
+                              switch (service.icon) {
+                                case 'tooth':
+                                  return <Stethoscope className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />;
+                                case 'teeth':
+                                  return <Sparkles className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />;
+                                case 'teeth-open':
+                                  return <Stethoscope className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />;
+                                case 'clipboard-check':
+                                  return <FileCheck className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />;
+                                case 'align-left':
+                                  return <AlignLeft className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />;
+                                case 'first-aid':
+                                  return <AlertTriangle className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />;
+                                case 'magic-wand-sparkles':
+                                  return <Syringe className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />;
+                                default:
+                                  return <Stethoscope className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />;
+                              }
+                            })()}
+                          </div>
+                        </div>
+                        <CardTitle className="text-xl font-semibold text-primary">{service.name}</CardTitle>
+                      </CardHeader>
+                      <CardContent className="flex-grow pt-2">
+                        <p className="text-neutral-600">{service.description}</p>
+                      </CardContent>
+                      <CardFooter className="justify-end pb-5">
+                        <Link href="/booking" className="text-primary font-medium hover:text-primary/80 flex items-center group-hover:underline">
+                          Book Now <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
+                        </Link>
+                      </CardFooter>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </>

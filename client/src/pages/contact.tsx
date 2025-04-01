@@ -34,7 +34,7 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Contact Information */}
             <div className="lg:col-span-1">
-              <Card className="h-full">
+              <Card className="h-full card-gradient">
                 <CardHeader>
                   <CardTitle>Get in Touch</CardTitle>
                   <CardDescription>Contact information and office hours</CardDescription>
@@ -90,7 +90,7 @@ export default function Contact() {
             
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <Card>
+              <Card className="card-gradient">
                 <CardHeader>
                   <CardTitle>Send Us a Message</CardTitle>
                   <CardDescription>
@@ -165,7 +165,7 @@ export default function Contact() {
             <h2 className="text-2xl font-bold text-center mb-8">Patient Information</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <Card>
+              <Card className="card-gradient">
                 <CardHeader>
                   <CardTitle>New Patients</CardTitle>
                 </CardHeader>
@@ -188,7 +188,7 @@ export default function Contact() {
                 </CardContent>
               </Card>
               
-              <Card>
+              <Card className="card-gradient">
                 <CardHeader>
                   <CardTitle>Payment & Insurance</CardTitle>
                 </CardHeader>

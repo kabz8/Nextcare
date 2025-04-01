@@ -55,28 +55,32 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-neutral-300 hover:text-brand-teal transition-colors">
+                <Link href="/" className="text-neutral-300 hover:text-primary transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-neutral-300 hover:text-brand-teal transition-colors">
+                <Link href="/services" className="text-neutral-300 hover:text-primary transition-colors">
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/team" className="text-neutral-300 hover:text-brand-teal transition-colors">
+                <Link href="/team" className="text-neutral-300 hover:text-primary transition-colors">
                   Our Team
                 </Link>
               </li>
-
               <li>
-                <Link href="/insurance" className="text-neutral-300 hover:text-brand-teal transition-colors">
+                <Link href="/insurance" className="text-neutral-300 hover:text-primary transition-colors">
                   Insurance
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-neutral-300 hover:text-brand-teal transition-colors">
+                <Link href="/faq" className="text-neutral-300 hover:text-primary transition-colors">
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-neutral-300 hover:text-primary transition-colors">
                   Contact
                 </Link>
               </li>
@@ -93,7 +97,7 @@ export default function Footer() {
                   placeholder="Your email"
                   className="rounded-r-none text-neutral-900 focus-visible:ring-primary"
                 />
-                <Button type="submit" className="rounded-l-none px-4 bg-brand-teal hover:bg-brand-teal/90">
+                <Button type="submit" className="rounded-l-none px-4 bg-primary hover:bg-primary/90">
                   <Mail className="h-4 w-4 text-white" />
                 </Button>
               </div>
@@ -105,8 +109,11 @@ export default function Footer() {
         <div className="border-t border-neutral-800 mt-8 pt-8 text-center text-sm text-neutral-400">
           <p>
             &copy; {new Date().getFullYear()} Nextcare Dental Studio. All rights reserved. | 
-            <a href="#" className="hover:text-brand-teal transition-colors ml-1">Privacy Policy</a> | 
-            <a href="#" className="hover:text-brand-teal transition-colors ml-1">Terms of Service</a>
+            <a href="#" className="hover:text-primary transition-colors ml-1">Privacy Policy</a> | 
+            <a href="#" className="hover:text-primary transition-colors ml-1">Terms of Service</a>
+          </p>
+          <p className="mt-2">
+            Developed by <a href="https://milespace.co.ke" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Milespace Group</a>
           </p>
         </div>
       </div>

@@ -1,8 +1,9 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Stethoscope, MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import logoPath from "../../assets/logo.png";
 
 export default function Footer() {
   return (
@@ -10,23 +11,22 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <div className="flex items-center mb-4">
-              <Stethoscope className="h-8 w-8 text-white mr-2" />
-              <span className="text-white font-bold text-xl">Nextcare Dental Studio</span>
+            <div className="mb-4">
+              <img src={logoPath} alt="Nextcare Dental Studio" className="h-14 brightness-0 invert" />
             </div>
             <p className="mb-4 text-neutral-300">Providing exceptional dental care in a comfortable environment since 2005.</p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-white hover:text-brand-teal transition-colors">
-                <FaFacebookF size={18} />
+            <div className="flex space-x-3">
+              <a href="#" className="w-9 h-9 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-brand-blue transition-all">
+                <FaFacebookF size={16} />
               </a>
-              <a href="#" className="text-white hover:text-brand-teal transition-colors">
-                <FaInstagram size={18} />
+              <a href="#" className="w-9 h-9 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-brand-blue transition-all">
+                <FaInstagram size={16} />
               </a>
-              <a href="#" className="text-white hover:text-brand-teal transition-colors">
-                <FaTwitter size={18} />
+              <a href="#" className="w-9 h-9 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-brand-blue transition-all">
+                <FaTwitter size={16} />
               </a>
-              <a href="#" className="text-white hover:text-brand-teal transition-colors">
-                <FaYoutube size={18} />
+              <a href="#" className="w-9 h-9 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-brand-blue transition-all">
+                <FaYoutube size={16} />
               </a>
             </div>
           </div>

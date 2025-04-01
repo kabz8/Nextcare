@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { FaShieldAlt, FaCheckCircle, FaInfoCircle, FaUserMd } from "react-icons/fa";
 import { Shield, Check, Info, ShieldCheck, Heart, Users } from "lucide-react";
+import PageHeader from "@/components/layout/PageHeader";
 
 // Updated insurance partners based on the logos image
 const insurancePartners = [
@@ -70,14 +71,11 @@ export default function Insurance() {
         <meta name="description" content="Learn about the insurance providers we work with at Nextcare Dental Studio. We make dental care accessible and affordable." />
       </Helmet>
       
-      <div className="bg-gradient-to-r from-primary/10 to-primary/5 py-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 text-center">Insurance Partners</h1>
-          <p className="text-lg text-center max-w-2xl mx-auto">
-            We work with major insurance providers to make quality dental care accessible and affordable.
-          </p>
-        </div>
-      </div>
+      <PageHeader 
+        title="Insurance Partners" 
+        subtitle="We work with major insurance providers to make quality dental care accessible and affordable."
+        badge="Coverage & Benefits"
+      />
       
       <div className="py-16 bg-white">
         <div className="container mx-auto px-4">

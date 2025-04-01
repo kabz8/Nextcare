@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Mail, UserCircle } from "lucide-react";
 import { FaLinkedin, FaFacebookSquare, FaTwitterSquare, FaUserMd, FaUserNurse, FaUser } from "react-icons/fa";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import PageHeader from "@/components/layout/PageHeader";
 
 const teamMembers = [
   {
@@ -71,12 +72,11 @@ export default function Team() {
         <meta name="description" content="Meet our team of experienced dental professionals at Nextcare Dental Studio in Nairobi, Kenya. We're dedicated to providing you with excellent dental care." />
       </Helmet>
       
-      <div className="bg-gradient-to-r from-primary/10 to-primary/5 py-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 text-center">Our Dental Team</h1>
-          <p className="text-lg text-center max-w-2xl mx-auto">Meet our team of experienced professionals dedicated to providing you with the best dental care.</p>
-        </div>
-      </div>
+      <PageHeader 
+        title="Our Dental Team" 
+        subtitle="Meet our team of experienced professionals dedicated to providing you with the best dental care." 
+        badge="Expert Staff"
+      />
       
       <div className="py-16 bg-white">
         <div className="container mx-auto px-4">

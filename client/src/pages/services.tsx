@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import { Service } from "@shared/schema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import PageHeader from "@/components/layout/PageHeader";
 import { 
   Stethoscope,
   Sparkles, 
@@ -52,21 +53,11 @@ export default function Services() {
         <meta name="description" content="Learn about the comprehensive dental services we offer at Nextcare Dental Studio in Nairobi, Kenya including preventive, cosmetic, and restorative dental care." />
       </Helmet>
       
-      <div className="bg-gradient-to-b from-primary/5 via-[#e8f5ff] to-white py-24 relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute top-20 right-[10%] w-64 h-64 rounded-full bg-[#36B5A6]/10 blur-3xl"></div>
-        <div className="absolute bottom-0 left-[10%] w-80 h-80 rounded-full bg-[#00ADDD]/10 blur-3xl"></div>
-        
-        <div className="container mx-auto px-4 max-w-6xl relative z-10">
-          <div className="text-center">
-            <div className="inline-block px-3 py-1 bg-primary/10 text-primary font-medium rounded-full text-sm mb-4">
-              Expert Dental Care
-            </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">Our Dental Services</h1>
-            <p className="text-lg text-center max-w-2xl mx-auto text-neutral-600">We offer a comprehensive range of dental services using the latest technology to provide you with exceptional oral healthcare.</p>
-          </div>
-        </div>
-      </div>
+      <PageHeader 
+        title="Our Dental Services" 
+        subtitle="We offer a comprehensive range of dental services using the latest technology to provide you with exceptional oral healthcare."
+        badge="Expert Dental Care"
+      />
       
       <div className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">

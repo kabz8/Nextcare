@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import PageHeader from "@/components/layout/PageHeader";
 
 export default function Contact() {
   return (
@@ -20,12 +21,14 @@ export default function Contact() {
         <meta name="description" content="Get in touch with Nextcare Dental Studio in Nairobi, Kenya. We're here to answer your questions and provide the dental care you need." />
       </Helmet>
       
-      <div className="py-12 bg-neutral-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-10">
-            <h1 className="text-3xl font-bold text-neutral-900 mb-4">Contact Us</h1>
-            <p className="text-lg max-w-2xl mx-auto">We're here to answer your questions and help you schedule your next appointment.</p>
-          </div>
+      <PageHeader 
+        title="Contact Us" 
+        subtitle="We're here to answer your questions and help you schedule your next appointment."
+        badge="Get In Touch"
+      />
+      
+      <div className="py-12 bg-white">
+        <div className="container mx-auto px-4 max-w-6xl">
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Contact Information */}

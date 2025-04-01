@@ -5,6 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import PageHeader from "@/components/layout/PageHeader";
 
 export default function FAQ() {
   const faqItems = [
@@ -57,14 +58,11 @@ export default function FAQ() {
         <meta name="description" content="Find answers to common questions about dental care, procedures, insurance, and appointments at Nextcare Dental Studio in Nairobi, Kenya." />
       </Helmet>
       
-      <div className="bg-gradient-to-r from-primary/10 to-primary/5 py-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 text-center">Frequently Asked Questions</h1>
-          <p className="text-lg text-center max-w-2xl mx-auto">
-            Find answers to common questions about our dental services, procedures, and policies.
-          </p>
-        </div>
-      </div>
+      <PageHeader 
+        title="Frequently Asked Questions" 
+        subtitle="Find answers to common questions about our dental services, procedures, and policies."
+        badge="Help & Information"
+      />
       
       <div className="py-12 bg-white">
         <div className="container mx-auto px-4 max-w-3xl">

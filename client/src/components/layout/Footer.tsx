@@ -35,15 +35,15 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-4">Contact Us</h4>
             <div className="mb-2 flex items-start">
               <MapPin className="h-5 w-5 mt-1 mr-3 text-white flex-shrink-0" />
-              <span className="text-neutral-300">123 Kenyatta Avenue<br />Nairobi, Kenya</span>
+              <span className="text-neutral-300">Feruzi Towers, 3rd Floor, Wing A<br />Kiambu Road, Nairobi, Kenya</span>
             </div>
             <div className="mb-2 flex items-center">
               <Phone className="h-5 w-5 mr-3 text-white flex-shrink-0" />
-              <span className="text-neutral-300">+254 722 123456</span>
+              <span className="text-neutral-300">0746290170 / 0728838994</span>
             </div>
             <div className="mb-2 flex items-center">
               <Mail className="h-5 w-5 mr-3 text-white flex-shrink-0" />
-              <span className="text-neutral-300">info@nextcaredentalstudio.com</span>
+              <span className="text-neutral-300">info@nextcaredentalstudio.co.ke</span>
             </div>
             <div className="mb-2 flex items-center">
               <Clock className="h-5 w-5 mr-3 text-white flex-shrink-0" />

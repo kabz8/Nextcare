@@ -42,8 +42,8 @@ export default function Contact() {
                       <h3 className="font-medium mb-1">Our Location</h3>
                       <p className="text-neutral-600">
                         Nextcare Dental Studio<br />
-                        Ngong Lane Plaza, 1st Floor<br />
-                        Nairobi, Kenya
+                        Feruzi Towers, 3rd Floor, Wing A<br />
+                        Kiambu Road, Nairobi, Kenya
                       </p>
                     </div>
                   </div>
@@ -52,8 +52,8 @@ export default function Contact() {
                     <Phone className="h-5 w-5 mr-3 text-brand-blue mt-0.5" />
                     <div>
                       <h3 className="font-medium mb-1">Phone</h3>
-                      <p className="text-neutral-600">+254 722 123456</p>
-                      <p className="text-neutral-600">+254 733 987654</p>
+                      <p className="text-neutral-600">0746290170</p>
+                      <p className="text-neutral-600">0728838994</p>
                     </div>
                   </div>
                   
@@ -61,8 +61,8 @@ export default function Contact() {
                     <Mail className="h-5 w-5 mr-3 text-brand-blue mt-0.5" />
                     <div>
                       <h3 className="font-medium mb-1">Email</h3>
-                      <p className="text-neutral-600">info@nextcaredental.co.ke</p>
-                      <p className="text-neutral-600">appointments@nextcaredental.co.ke</p>
+                      <p className="text-neutral-600">info@nextcaredentalstudio.co.ke</p>
+                      <p className="text-neutral-600">appointments@nextcaredentalstudio.co.ke</p>
                     </div>
                   </div>
                   
@@ -145,7 +145,7 @@ export default function Contact() {
             <h2 className="text-2xl font-bold text-center mb-8">Find Us</h2>
             <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8193120198385!2d36.780291114754855!3d-1.2924290359826795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10a06eb5e0b7%3A0x9ec3be88c1acb9d2!2sNgong%20Ln%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1648565030445!5m2!1sen!2ske" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7897053854617!2d36.8334177!3d-1.2202863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3d3eadd106f5%3A0x7cfa7e86fb520ead!2sFeruzi%20Towers%2C%20Kiambu%20Rd%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1680512347792!5m2!1sen!2ske" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 

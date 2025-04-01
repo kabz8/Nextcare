@@ -16,16 +16,16 @@ export default function Footer() {
             </div>
             <p className="mb-4 text-neutral-300">Providing exceptional dental care in a comfortable environment since 2005.</p>
             <div className="flex space-x-3">
-              <a href="#" className="w-9 h-9 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-brand-teal transition-all">
+              <a href="#" className="w-9 h-9 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all">
                 <FaFacebookF size={16} />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-brand-teal transition-all">
+              <a href="#" className="w-9 h-9 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all">
                 <FaInstagram size={16} />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-brand-teal transition-all">
+              <a href="#" className="w-9 h-9 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all">
                 <FaTwitter size={16} />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-brand-teal transition-all">
+              <a href="#" className="w-9 h-9 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all">
                 <FaYoutube size={16} />
               </a>
             </div>

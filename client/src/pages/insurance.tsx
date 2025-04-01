@@ -141,7 +141,7 @@ export default function Insurance() {
         
         <div className="py-16">
           <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+            <h2 className="text-2xl font-bold mb-8 text-center">Frequently Asked Questions About Insurance</h2>
             <div className="space-y-6">
               <div className="card-gradient p-6 rounded-lg">
                 <h3 className="text-lg font-semibold mb-2">How do I know if my insurance covers my treatment?</h3>

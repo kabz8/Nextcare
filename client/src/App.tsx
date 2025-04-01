@@ -7,6 +7,8 @@ import Home from "@/pages/home";
 import Services from "@/pages/services";
 import Booking from "@/pages/booking";
 import Contact from "@/pages/contact";
+import Team from "@/pages/team";
+import Insurance from "@/pages/insurance";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { CalendarProvider } from "@/lib/CalendarContext";
@@ -21,6 +23,8 @@ function Router() {
           <Route path="/services" component={Services} />
           <Route path="/booking" component={Booking} />
           <Route path="/contact" component={Contact} />
+          <Route path="/team" component={Team} />
+          <Route path="/insurance" component={Insurance} />
           <Route component={NotFound} />
         </Switch>
       </main>

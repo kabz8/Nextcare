@@ -47,35 +47,35 @@ export default function InsurancePartnersSection() {
           <h2 className="text-3xl font-bold text-brand-blue mb-4">Our Insurance Partners</h2>
           <p className="text-lg text-neutral-700 max-w-2xl mx-auto">
             We work with most major insurance providers to ensure you get the dental care you need.
-            Contact us to verify your specific coverage.
+            <a href="/insurance" className="text-brand-blue hover:underline ml-1">Learn more about our insurance options</a>.
           </p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 justify-items-center">
           {/* Display international insurance icons */}
           {iconPartners.map((partner) => (
-            <div key={partner.name} className="flex flex-col items-center justify-center p-4 rounded-xl hover:bg-neutral-50 transition-colors cursor-pointer">
+            <a href="/insurance" key={partner.name} className="flex flex-col items-center justify-center p-4 rounded-xl hover:bg-neutral-50 transition-colors cursor-pointer">
               <div className="w-16 h-16 bg-brand-light-blue/10 rounded-full flex items-center justify-center mb-2">
                 <partner.icon className="w-9 h-9 text-brand-blue" />
               </div>
               <span className="mt-2 text-sm font-medium text-neutral-800">{partner.name}</span>
-            </div>
+            </a>
           ))}
           
           {/* Display Kenyan/African insurance logos */}
           {insurancePartners.map((partner) => (
-            <div key={partner.name} className="flex flex-col items-center justify-center p-4 rounded-xl hover:bg-neutral-50 transition-colors cursor-pointer">
+            <a href="/insurance" key={partner.name} className="flex flex-col items-center justify-center p-4 rounded-xl hover:bg-neutral-50 transition-colors cursor-pointer">
               <div className="w-16 h-16 bg-brand-blue/10 rounded-full flex items-center justify-center text-brand-blue font-bold text-xl mb-2">
                 {partner.name.charAt(0)}
               </div>
               <span className="mt-2 text-sm font-medium text-neutral-800">{partner.name}</span>
-            </div>
+            </a>
           ))}
         </div>
         
         <div className="mt-10 text-center">
           <p className="text-neutral-500">
-            Don't see your insurance provider? <a href="/contact" className="text-brand-blue font-medium hover:underline">Contact us</a> to verify coverage.
+            Don't see your insurance provider? <a href="/insurance" className="text-brand-blue font-medium hover:underline">View all supported providers</a> or <a href="/contact" className="text-brand-blue font-medium hover:underline">contact us</a> to verify coverage.
           </p>
         </div>
       </div>

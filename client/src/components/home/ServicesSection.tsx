@@ -21,23 +21,29 @@ export default function ServicesSection() {
   const mainServices = services?.slice(0, 6);
 
   const getServiceIcon = (iconName: string) => {
+    const IconWrapper = (icon: React.ReactNode) => (
+      <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center border-2 border-primary/20">
+        {icon}
+      </div>
+    );
+    
     switch (iconName) {
       case 'tooth':
-        return <Stethoscope className="h-10 w-10 text-primary" />;
+        return IconWrapper(<Stethoscope className="h-10 w-10 text-primary" />);
       case 'teeth':
-        return <Sparkles className="h-10 w-10 text-primary" />;
+        return IconWrapper(<Sparkles className="h-10 w-10 text-primary" />);
       case 'teeth-open':
-        return <Stethoscope className="h-10 w-10 text-primary" />;
+        return IconWrapper(<Stethoscope className="h-10 w-10 text-primary" />);
       case 'clipboard-check':
-        return <FileCheck className="h-10 w-10 text-primary" />;
+        return IconWrapper(<FileCheck className="h-10 w-10 text-primary" />);
       case 'align-left':
-        return <AlignLeft className="h-10 w-10 text-primary" />;
+        return IconWrapper(<AlignLeft className="h-10 w-10 text-primary" />);
       case 'first-aid':
-        return <AlertTriangle className="h-10 w-10 text-primary" />;
+        return IconWrapper(<AlertTriangle className="h-10 w-10 text-primary" />);
       case 'magic-wand-sparkles':
-        return <Syringe className="h-10 w-10 text-primary" />;
+        return IconWrapper(<Syringe className="h-10 w-10 text-primary" />);
       default:
-        return <Stethoscope className="h-10 w-10 text-primary" />;
+        return IconWrapper(<Stethoscope className="h-10 w-10 text-primary" />);
     }
   };
 
@@ -54,7 +60,7 @@ export default function ServicesSection() {
             {[...Array(6)].map((_, i) => (
               <Card key={i} className="bg-neutral-50 border-neutral-200">
                 <CardHeader>
-                  <Skeleton className="h-10 w-10 rounded-full mb-4" />
+                  <Skeleton className="h-20 w-20 rounded-full mb-4" />
                   <Skeleton className="h-6 w-32" />
                 </CardHeader>
                 <CardContent>

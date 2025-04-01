@@ -19,23 +19,29 @@ export default function Services() {
   });
 
   const getServiceIcon = (iconName: string) => {
+    const IconWrapper = (icon: React.ReactNode) => (
+      <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center border-2 border-primary/20">
+        {icon}
+      </div>
+    );
+    
     switch (iconName) {
       case 'tooth':
-        return <Stethoscope className="h-8 w-8 text-primary" />;
+        return IconWrapper(<Stethoscope className="h-8 w-8 text-primary" />);
       case 'teeth':
-        return <Sparkles className="h-8 w-8 text-primary" />;
+        return IconWrapper(<Sparkles className="h-8 w-8 text-primary" />);
       case 'teeth-open':
-        return <Stethoscope className="h-8 w-8 text-primary" />;
+        return IconWrapper(<Stethoscope className="h-8 w-8 text-primary" />);
       case 'clipboard-check':
-        return <FileCheck className="h-8 w-8 text-primary" />;
+        return IconWrapper(<FileCheck className="h-8 w-8 text-primary" />);
       case 'align-left':
-        return <AlignLeft className="h-8 w-8 text-primary" />;
+        return IconWrapper(<AlignLeft className="h-8 w-8 text-primary" />);
       case 'first-aid':
-        return <AlertTriangle className="h-8 w-8 text-primary" />;
+        return IconWrapper(<AlertTriangle className="h-8 w-8 text-primary" />);
       case 'magic-wand-sparkles':
-        return <Syringe className="h-8 w-8 text-primary" />;
+        return IconWrapper(<Syringe className="h-8 w-8 text-primary" />);
       default:
-        return <Stethoscope className="h-8 w-8 text-primary" />;
+        return IconWrapper(<Stethoscope className="h-8 w-8 text-primary" />);
     }
   };
 

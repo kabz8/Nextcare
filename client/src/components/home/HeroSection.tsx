@@ -71,9 +71,9 @@ export default function HeroSection() {
               <img 
                 src={heroDentistImage} 
                 alt="Smiling dental professional at Nextcare Dental Studio" 
-                className="max-w-full h-auto" 
+                className="max-w-full h-auto object-cover" 
                 width="600" 
-                height="800"
+                height="600"
               />
               
               {/* Overlay gradient */}

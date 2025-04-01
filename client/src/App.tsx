@@ -9,6 +9,7 @@ import Booking from "@/pages/booking";
 import Contact from "@/pages/contact";
 import Team from "@/pages/team";
 import Insurance from "@/pages/insurance";
+import FAQ from "@/pages/faq";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { CalendarProvider } from "@/lib/CalendarContext";
@@ -25,6 +26,7 @@ function Router() {
           <Route path="/contact" component={Contact} />
           <Route path="/team" component={Team} />
           <Route path="/insurance" component={Insurance} />
+          <Route path="/faq" component={FAQ} />
           <Route component={NotFound} />
         </Switch>
       </main>

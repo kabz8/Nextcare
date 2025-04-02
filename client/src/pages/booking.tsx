@@ -28,6 +28,7 @@ export interface BookingData {
   serviceId: number | null;
   serviceName: string;
   serviceDescription: string;
+  customService: string;
   firstName: string;
   lastName: string;
   patientType: "new" | "returning";
@@ -48,6 +49,7 @@ export default function Booking() {
     serviceId: null,
     serviceName: "",
     serviceDescription: "",
+    customService: "",
     firstName: "",
     lastName: "",
     patientType: "new", 
@@ -68,7 +70,9 @@ export default function Booking() {
       ...bookingData,
       serviceId: service.id,
       serviceName: service.name,
-      serviceDescription: service.description
+      serviceDescription: service.description,
+      // If it's the custom service option, make sure we keep the custom description
+      customService: service.id === 999 ? bookingData.customService : ""
     });
     setActiveStep("patient-info");
   };
@@ -161,7 +165,7 @@ export default function Booking() {
             <Card className="shadow-lg overflow-hidden">
               <Tabs value={activeStep} className="w-full">
                 <TabsContent value="service">
-                  <ServiceSelection onServiceSelect={handleServiceSelect} />
+                  <ServiceSelection onServiceSelect={handleServiceSelect} initialData={bookingData} />
                 </TabsContent>
                 
                 <TabsContent value="patient-info">

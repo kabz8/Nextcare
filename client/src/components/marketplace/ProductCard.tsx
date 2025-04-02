@@ -3,6 +3,8 @@ import { Link } from 'wouter';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { useCart } from '@/lib/CartContext';
+import { useToast } from '@/hooks/use-toast';
 
 interface ProductCardProps {
   product: {
@@ -24,11 +26,26 @@ const defaultCategoryLabels: Record<string, string> = {
 };
 
 export default function ProductCard({ product, categoryLabels = defaultCategoryLabels }: ProductCardProps) {
+  const { addToCart } = useCart();
+  const { toast } = useToast();
+  
   const formatPrice = (price: string) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-    }).format(parseFloat(price));
+    return `KSh ${new Intl.NumberFormat('en-KE').format(parseFloat(price))}`;
+  };
+  
+  const handleAddToCart = () => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      category: product.category
+    });
+    
+    toast({
+      title: "Product added to cart",
+      description: `${product.name} has been added to your cart.`,
+      duration: 3000
+    });
   };
 
   return (
@@ -59,7 +76,7 @@ export default function ProductCard({ product, categoryLabels = defaultCategoryL
         <div className="font-medium text-lg text-primary">
           {formatPrice(product.price)}
         </div>
-        <Button size="sm">Add to Cart</Button>
+        <Button size="sm" onClick={handleAddToCart}>Add to Cart</Button>
       </CardFooter>
     </Card>
   );

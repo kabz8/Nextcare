@@ -14,6 +14,7 @@ import Marketplace from "@/pages/marketplace";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { CalendarProvider } from "@/lib/CalendarContext";
+import { CartProvider } from "@/lib/CartContext";
 
 function Router() {
   return (
@@ -41,8 +42,10 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <CalendarProvider>
-        <Router />
-        <Toaster />
+        <CartProvider>
+          <Router />
+          <Toaster />
+        </CartProvider>
       </CalendarProvider>
     </QueryClientProvider>
   );

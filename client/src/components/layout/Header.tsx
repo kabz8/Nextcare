@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import logoPath from "../../assets/logo.png";
 import iconPath from "../../assets/icon.png";
+import CartIcon from "./CartIcon";
 
 export default function Header() {
   const [location] = useLocation();
@@ -46,8 +47,9 @@ export default function Header() {
         </nav>
         
         <div className="flex items-center">
+          <CartIcon />
           <Link href="/booking">
-            <Button className="bg-primary hover:bg-primary/90 font-medium text-sm py-2 px-5 shadow-sm hover:shadow transition-all hover:translate-y-[-2px]">
+            <Button className="ml-2 bg-primary hover:bg-primary/90 font-medium text-sm py-2 px-5 shadow-sm hover:shadow transition-all hover:translate-y-[-2px]">
               Book Appointment
             </Button>
           </Link>
@@ -91,11 +93,18 @@ export default function Header() {
                   ))}
                   
                   <div className="pt-4 mt-4 border-t border-neutral-200">
-                    <Link href="/booking" onClick={() => setMobileMenuOpen(false)}>
-                      <Button className="w-full bg-primary hover:bg-primary/90 font-medium py-2.5 shadow-sm">
-                        Book Appointment
-                      </Button>
-                    </Link>
+                    <div className="flex gap-2 mb-3">
+                      <Link href="/marketplace" onClick={() => setMobileMenuOpen(false)} className="flex-1">
+                        <Button variant="outline" className="w-full">
+                          View Cart
+                        </Button>
+                      </Link>
+                      <Link href="/booking" onClick={() => setMobileMenuOpen(false)} className="flex-1">
+                        <Button className="w-full bg-primary hover:bg-primary/90 font-medium py-2.5 shadow-sm">
+                          Book Appointment
+                        </Button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -1,37 +1,38 @@
-import { FaBuilding, FaHospital, FaShieldAlt, FaHeart, FaHandHoldingMedical } from "react-icons/fa";
-import { BiHealth, BiShield } from "react-icons/bi";
-import { MdHealthAndSafety, MdMedicalServices } from "react-icons/md";
+// Import insurance logo images
+import heritageLogoPath from "../../assets/insurance-logos/heritage.png";
+import minetLogoPath from "../../assets/insurance-logos/minet.png";
+import kenbrightLogoPath from "../../assets/insurance-logos/kenbright.png";
+import firstAssuranceLogoPath from "../../assets/insurance-logos/first-assurance.png";
+import liaisonGroupLogoPath from "../../assets/insurance-logos/liaison-group.png";
+import sahamLogoPath from "../../assets/insurance-logos/saham.png";
+import sanlamLogoPath from "../../assets/insurance-logos/sanlam.png";
+import cicInsuranceLogoPath from "../../assets/insurance-logos/cic-insurance.png";
+import uapOldMutualLogoPath from "../../assets/insurance-logos/uap-old-mutual.png";
+import cignaLogoPath from "../../assets/insurance-logos/cigna.png";
+import aarInsuranceLogoPath from "../../assets/insurance-logos/aar-insurance.png";
+import mtibaLogoPath from "../../assets/insurance-logos/mtiba.png";
 
-// Create a component for each insurance logo with standardized styling
-function InsuranceLogo({ icon: Icon, name }: { icon: React.ElementType; name: string }) {
-  return (
-    <div className="flex flex-col items-center justify-center p-4">
-      <Icon className="w-16 h-16 text-neutral-600" />
-      <span className="mt-2 text-sm font-medium text-neutral-600">{name}</span>
-    </div>
-  );
+// Define insurance partner type
+interface InsurancePartner {
+  name: string;
+  logo: string;
 }
 
 export default function InsurancePartnersSection() {
-  // Insurance partners data
-  const insurancePartners = [
-    // Major Kenyan and African insurance companies
-    { name: "Jubilee Insurance", logo: "jubilee-insurance.svg" },
-    { name: "AAR Insurance", logo: "aar-insurance.svg" },
-    { name: "UAP Old Mutual", logo: "uap-old-mutual.svg" },
-    { name: "NHIF", logo: "nhif.svg" },
-    { name: "Britam", logo: "britam.svg" },
-    { name: "CIC Insurance", logo: "cic-insurance.svg" }
-  ];
-
-  // Use generic health/insurance icons from react-icons
-  const iconPartners = [
-    { name: "Aetna", icon: FaShieldAlt },
-    { name: "Cigna", icon: MdHealthAndSafety },
-    { name: "Blue Cross", icon: BiHealth },
-    { name: "Allianz", icon: FaHandHoldingMedical },
-    { name: "AXA", icon: MdMedicalServices },
-    { name: "MetLife", icon: BiShield }
+  // Insurance partners data with actual logos
+  const insurancePartners: InsurancePartner[] = [
+    { name: "Heritage Insurance", logo: heritageLogoPath },
+    { name: "Minet", logo: minetLogoPath },
+    { name: "Kenbright", logo: kenbrightLogoPath },
+    { name: "First Assurance", logo: firstAssuranceLogoPath },
+    { name: "Liaison Group", logo: liaisonGroupLogoPath },
+    { name: "Saham", logo: sahamLogoPath },
+    { name: "Sanlam", logo: sanlamLogoPath },
+    { name: "CIC Insurance", logo: cicInsuranceLogoPath },
+    { name: "UAP Old Mutual", logo: uapOldMutualLogoPath },
+    { name: "Cigna", logo: cignaLogoPath },
+    { name: "AAR Insurance", logo: aarInsuranceLogoPath },
+    { name: "M-TIBA", logo: mtibaLogoPath }
   ];
 
   return (
@@ -46,21 +47,15 @@ export default function InsurancePartnersSection() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
-          {/* Display international insurance icons */}
-          {iconPartners.map((partner) => (
-            <a href="/insurance" key={partner.name} className="flex flex-col items-center justify-center p-4 rounded-xl hover:bg-neutral-50 transition-colors cursor-pointer">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-2">
-                <partner.icon className="w-9 h-9 text-primary" />
-              </div>
-              <span className="mt-2 text-sm font-medium text-neutral-800">{partner.name}</span>
-            </a>
-          ))}
-          
-          {/* Display Kenyan/African insurance logos */}
+          {/* Display insurance partner logos */}
           {insurancePartners.map((partner) => (
             <a href="/insurance" key={partner.name} className="flex flex-col items-center justify-center p-4 rounded-xl hover:bg-neutral-50 transition-colors cursor-pointer">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-xl mb-2">
-                {partner.name.charAt(0)}
+              <div className="w-24 h-16 flex items-center justify-center mb-2 bg-white overflow-hidden">
+                <img 
+                  src={partner.logo} 
+                  alt={`${partner.name} logo`} 
+                  className="object-contain w-full h-full"
+                />
               </div>
               <span className="mt-2 text-sm font-medium text-neutral-800">{partner.name}</span>
             </a>

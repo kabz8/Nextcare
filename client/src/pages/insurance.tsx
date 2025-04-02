@@ -5,61 +5,105 @@ import { FaShieldAlt, FaCheckCircle, FaInfoCircle, FaUserMd } from "react-icons/
 import { Shield, Check, Info, ShieldCheck, Heart, Users } from "lucide-react";
 import PageHeader from "@/components/layout/PageHeader";
 
-// Updated insurance partners based on the logos image
+// Import insurance logo images
+import heritageLogoPath from "../assets/insurance-logos/heritage.png";
+import minetLogoPath from "../assets/insurance-logos/minet.png";
+import kenbrightLogoPath from "../assets/insurance-logos/kenbright.png";
+import firstAssuranceLogoPath from "../assets/insurance-logos/first-assurance.png";
+import liaisonGroupLogoPath from "../assets/insurance-logos/liaison-group.png";
+import sahamLogoPath from "../assets/insurance-logos/saham.png";
+import sanlamLogoPath from "../assets/insurance-logos/sanlam.png";
+import cicInsuranceLogoPath from "../assets/insurance-logos/cic-insurance.png";
+import uapOldMutualLogoPath from "../assets/insurance-logos/uap-old-mutual.png";
+import cignaLogoPath from "../assets/insurance-logos/cigna.png";
+import aarInsuranceLogoPath from "../assets/insurance-logos/aar-insurance.png";
+import mtibaLogoPath from "../assets/insurance-logos/mtiba.png";
+
+// Updated insurance partners with logos
 const insurancePartners = [
   {
     id: 1,
-    name: "Jubilee Insurance",
+    name: "Heritage Insurance",
+    logo: heritageLogoPath,
     description: "Comprehensive dental coverage with a wide network of providers.",
     plans: ["Basic Dental", "Standard Dental", "Premium Dental"]
   },
   {
     id: 2,
     name: "Minet",
+    logo: minetLogoPath,
     description: "Flexible dental plans for individuals and families with good preventive care coverage.",
     plans: ["Individual Plan", "Family Plan", "Corporate Plan"]
   },
   {
     id: 3,
     name: "Sanlam",
+    logo: sanlamLogoPath,
     description: "Affordable dental plans with excellent customer service and quick claims processing.",
     plans: ["Basic Coverage", "Enhanced Coverage", "Premium Coverage"]
   },
   {
     id: 4,
     name: "CIC Insurance",
+    logo: cicInsuranceLogoPath,
     description: "Specialized dental plans with focus on preventive and orthodontic care.",
     plans: ["Preventive Care", "Comprehensive Care", "Orthodontic Care"]
   },
   {
     id: 5,
-    name: "UAP",
+    name: "UAP Old Mutual",
+    logo: uapOldMutualLogoPath,
     description: "National health insurance coverage for basic dental procedures and emergencies.",
     plans: ["Basic Coverage", "Premium Coverage", "Family Coverage"]
   },
   {
     id: 6,
-    name: "Heritage Insurance",
+    name: "Kenbright",
+    logo: kenbrightLogoPath,
     description: "Customizable dental plans to meet your specific needs and budget.",
     plans: ["Essential Plan", "Comprehensive Plan", "Elite Plan"]
   },
   {
     id: 7,
     name: "Cigna",
+    logo: cignaLogoPath,
     description: "International coverage with comprehensive dental benefits.",
     plans: ["Global Health", "International Plan", "Expatriate Plan"]
   },
   {
     id: 8,
     name: "First Assurance",
+    logo: firstAssuranceLogoPath,
     description: "Reliable dental coverage with straightforward claims processing.",
     plans: ["Basic Plan", "Standard Plan", "Premium Plan"]
   },
   {
     id: 9,
     name: "Liaison Group",
+    logo: liaisonGroupLogoPath,
     description: "Flexible insurance solutions for individuals and businesses.",
     plans: ["Individual Plan", "Family Plan", "Corporate Plan"]
+  },
+  {
+    id: 10,
+    name: "Saham",
+    logo: sahamLogoPath,
+    description: "Comprehensive health and dental insurance solutions.",
+    plans: ["Individual Plan", "Family Plan", "Corporate Plan"]
+  },
+  {
+    id: 11,
+    name: "AAR Insurance",
+    logo: aarInsuranceLogoPath,
+    description: "Affordable healthcare and dental solutions for all.",
+    plans: ["Basic Coverage", "Enhanced Coverage", "Premium Coverage"]
+  },
+  {
+    id: 12,
+    name: "M-TIBA",
+    logo: mtibaLogoPath,
+    description: "Digital healthcare financing solutions for accessible care.",
+    plans: ["Basic Plan", "Standard Plan", "Premium Plan"]
   }
 ];
 
@@ -112,10 +156,12 @@ export default function Insurance() {
               {insurancePartners.map((partner) => (
                 <Card key={partner.id} className="card-gradient border border-neutral-200 hover:shadow-md transition-shadow">
                   <CardHeader className="pb-2 flex flex-col items-center text-center">
-                    <div className="mb-4 p-4 bg-primary/10 rounded-full">
-                      <div className="h-12 w-12 flex items-center justify-center">
-                        <ShieldCheck className="h-12 w-12 text-primary" />
-                      </div>
+                    <div className="w-36 h-20 mb-4 flex items-center justify-center">
+                      <img 
+                        src={partner.logo} 
+                        alt={`${partner.name} logo`} 
+                        className="object-contain max-w-full max-h-full"
+                      />
                     </div>
                     <CardTitle className="text-xl font-bold">{partner.name}</CardTitle>
                   </CardHeader>

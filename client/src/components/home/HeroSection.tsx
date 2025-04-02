@@ -113,7 +113,7 @@ export default function HeroSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-bl from-[#00ADDD]/15 to-transparent"></div>
                 <div className="absolute top-0 left-0 bg-[#36B5A6] text-white text-xs px-2 py-1 rounded-br-lg font-medium">
-                  Our Team
+                  Expert Care
                 </div>
               </div>
             </div>

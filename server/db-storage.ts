@@ -7,6 +7,7 @@ import {
   timeSlots,
   users,
   testimonials,
+  products,
   type Service,
   type InsertService,
   type Appointment,
@@ -16,7 +17,9 @@ import {
   type User,
   type InsertUser,
   type Testimonial,
-  type InsertTestimonial
+  type InsertTestimonial,
+  type Product,
+  type InsertProduct
 } from "@shared/schema";
 
 export class DbStorage implements IStorage {
@@ -187,12 +190,39 @@ export class DbStorage implements IStorage {
     const result = await db.insert(testimonials).values(testimonial).returning();
     return result[0];
   }
+  
+  // Products
+  async getProducts(): Promise<Product[]> {
+    return await db.select().from(products);
+  }
+
+  async getProduct(id: number): Promise<Product | undefined> {
+    const result = await db.select().from(products).where(eq(products.id, id)).limit(1);
+    return result[0];
+  }
+
+  async getFeaturedProducts(): Promise<Product[]> {
+    return await db.select().from(products).where(eq(products.featured, true));
+  }
+
+  async getProductsByCategory(category: string): Promise<Product[]> {
+    return await db.select().from(products).where(eq(products.category, category));
+  }
+
+  async createProduct(product: InsertProduct): Promise<Product> {
+    const result = await db.insert(products).values({
+      ...product,
+      featured: product.featured || false
+    }).returning();
+    return result[0];
+  }
 
   // Seed methods
   async seedDatabase(): Promise<void> {
     await this.seedServices();
     await this.seedTestimonials();
     await this.seedTimeSlots();
+    await this.seedProducts();
   }
 
   private async seedServices(): Promise<void> {
@@ -380,5 +410,98 @@ export class DbStorage implements IStorage {
     }
     
     console.log(`Seeded ${slotsCreated} time slots successfully`);
+  }
+  
+  private async seedProducts(): Promise<void> {
+    const existingProducts = await db.select().from(products).limit(1);
+    
+    // Only seed if there are no products yet
+    if (existingProducts.length > 0) {
+      console.log("Products already seeded, skipping...");
+      return;
+    }
+    
+    console.log("Seeding products...");
+    
+    const initialProducts: InsertProduct[] = [
+      {
+        name: "Premium Electric Toothbrush",
+        description: "Advanced sonic technology with multiple cleaning modes and smart timer for optimal dental hygiene.",
+        price: "79.99",
+        imageUrl: "/assets/products/electric-toothbrush.jpg",
+        category: "dental-care",
+        stock: 25,
+        featured: true
+      },
+      {
+        name: "Antibacterial Mouthwash",
+        description: "Alcohol-free formula that kills 99.9% of germs that cause bad breath, plaque, and gingivitis.",
+        price: "12.99",
+        imageUrl: "/assets/products/mouthwash.jpg",
+        category: "dental-care",
+        stock: 50,
+        featured: true
+      },
+      {
+        name: "Professional Teeth Whitening Kit",
+        description: "Dental-grade whitening system for professional results at home. Removes years of stains in just days.",
+        price: "59.99",
+        imageUrl: "/assets/products/whitening-kit.jpg",
+        category: "whitening",
+        stock: 15,
+        featured: true
+      },
+      {
+        name: "Invisalign Clear Aligners",
+        description: "Custom-made clear aligners for discreet teeth straightening. Consultation required before purchase.",
+        price: "1999.99",
+        imageUrl: "/assets/products/invisalign.jpg",
+        category: "orthodontics",
+        stock: 10,
+        featured: true
+      },
+      {
+        name: "Sensitive Teeth Toothpaste",
+        description: "Clinically proven relief for sensitive teeth. Builds lasting protection against sensitivity with regular use.",
+        price: "8.99",
+        imageUrl: "/assets/products/sensitive-toothpaste.jpg",
+        category: "dental-care",
+        stock: 45,
+        featured: false
+      },
+      {
+        name: "Water Flosser",
+        description: "High-pressure water stream removes debris and bacteria deep between teeth and below the gumline.",
+        price: "49.99",
+        imageUrl: "/assets/products/water-flosser.jpg",
+        category: "dental-care",
+        stock: 20,
+        featured: false
+      },
+      {
+        name: "Orthodontic Wax",
+        description: "Provides relief from braces irritation. Safe, non-toxic formula that's easy to apply.",
+        price: "5.99",
+        imageUrl: "/assets/products/ortho-wax.jpg",
+        category: "orthodontics",
+        stock: 60,
+        featured: false
+      },
+      {
+        name: "Fluoride Dental Rinse",
+        description: "Strengthens enamel and helps prevent cavities. Ideal for daily use after brushing.",
+        price: "7.99",
+        imageUrl: "/assets/products/fluoride-rinse.jpg",
+        category: "dental-care",
+        stock: 40,
+        featured: false
+      }
+    ];
+    
+    for (const product of initialProducts) {
+      await this.createProduct(product);
+    }
+    
+    console.log(`Seeded ${initialProducts.length} products successfully`);
   }
 }

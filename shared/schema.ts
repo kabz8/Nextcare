@@ -1,4 +1,4 @@
-import { pgTable, text, serial, integer, timestamp, boolean } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, integer, timestamp, boolean, numeric } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -78,3 +78,23 @@ export const testimonials = pgTable("testimonials", {
 export const insertTestimonialSchema = createInsertSchema(testimonials).omit({ id: true });
 export type InsertTestimonial = z.infer<typeof insertTestimonialSchema>;
 export type Testimonial = typeof testimonials.$inferSelect;
+
+// Products for the marketplace section
+export const products = pgTable("products", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  description: text("description").notNull(),
+  price: numeric("price").notNull(),
+  imageUrl: text("image_url").notNull(),
+  category: text("category").notNull(), // dental care, orthodontics, etc.
+  stock: integer("stock").notNull(),
+  featured: boolean("featured").default(false),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+export const insertProductSchema = createInsertSchema(products).omit({ 
+  id: true,
+  createdAt: true 
+});
+export type InsertProduct = z.infer<typeof insertProductSchema>;
+export type Product = typeof products.$inferSelect;

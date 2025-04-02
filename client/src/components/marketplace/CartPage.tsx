@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Card,
   CardContent,
@@ -13,16 +13,22 @@ import { Input } from '@/components/ui/input';
 import { Trash2, ShoppingCart, MinusCircle, PlusCircle } from 'lucide-react';
 import { useCart } from '@/lib/CartContext';
 import { useToast } from '@/hooks/use-toast';
+import Checkout from './Checkout';
 
 export default function CartPage() {
   const { cart, removeFromCart, updateQuantity, clearCart, totalItems, totalPrice } = useCart();
   const { toast } = useToast();
+  const [isCheckingOut, setIsCheckingOut] = useState(false);
   
   const formatPrice = (price: number | string) => {
     const numPrice = typeof price === 'string' ? parseFloat(price) : price;
     return `KSh ${new Intl.NumberFormat('en-KE').format(numPrice)}`;
   };
   
+  if (isCheckingOut) {
+    return <Checkout />;
+  }
+
   if (cart.length === 0) {
     return (
       <Card className="w-full">
@@ -42,12 +48,7 @@ export default function CartPage() {
   }
   
   const handleCheckout = () => {
-    toast({
-      title: "Checkout Complete",
-      description: "Thank you for your purchase!",
-      duration: 5000,
-    });
-    clearCart();
+    setIsCheckingOut(true);
   };
   
   return (

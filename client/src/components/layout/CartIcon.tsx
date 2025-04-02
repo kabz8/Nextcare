@@ -1,4 +1,4 @@
-import { Link } from 'wouter';
+import { Link, useLocation } from 'wouter';
 import { ShoppingCart, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -11,9 +11,14 @@ import {
 
 export default function CartIcon() {
   const { cart, totalItems, totalPrice, removeFromCart } = useCart();
+  const [, setLocation] = useLocation();
   
   const formatPrice = (price: number) => {
     return `KSh ${new Intl.NumberFormat('en-KE').format(price)}`;
+  };
+  
+  const goToCart = () => {
+    setLocation('/marketplace?tab=cart');
   };
   
   return (
@@ -37,11 +42,14 @@ export default function CartIcon() {
         <div className="space-y-2">
           <div className="flex justify-between items-center">
             <h4 className="font-medium">Shopping Cart</h4>
-            <Link href="/marketplace">
-              <Button variant="link" size="sm" className="h-auto py-0 px-1 text-primary text-xs">
-                View Cart
-              </Button>
-            </Link>
+            <Button 
+              variant="link" 
+              size="sm" 
+              className="h-auto py-0 px-1 text-primary text-xs"
+              onClick={goToCart}
+            >
+              View Cart
+            </Button>
           </div>
           
           {cart.length === 0 ? (
@@ -79,11 +87,9 @@ export default function CartIcon() {
                   <span className="font-medium">Total:</span>
                   <span className="font-bold">{formatPrice(totalPrice)}</span>
                 </div>
-                <Link href="/marketplace">
-                  <Button className="w-full mt-2">
-                    Checkout
-                  </Button>
-                </Link>
+                <Button className="w-full mt-2" onClick={goToCart}>
+                  Checkout
+                </Button>
               </div>
             </>
           )}

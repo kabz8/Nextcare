@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
+import { useLocation } from 'wouter';
 import PageHeader from '@/components/layout/PageHeader';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
@@ -18,9 +19,24 @@ interface Product {
 }
 
 export default function Marketplace() {
-  const [activeTab, setActiveTab] = useState<'products' | 'cart'>('products');
+  const [location, setLocation] = useLocation();
+  const [activeTab, setActiveTab] = useState<'products' | 'cart'>(
+    location.includes('?tab=cart') ? 'cart' : 'products'
+  );
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const { totalItems } = useCart();
+  
+  const handleTabChange = (value: string) => {
+    const newTab = value as 'products' | 'cart';
+    setActiveTab(newTab);
+    
+    // Update URL when changing tabs
+    if (newTab === 'cart') {
+      setLocation('/marketplace?tab=cart', { replace: true });
+    } else {
+      setLocation('/marketplace', { replace: true });
+    }
+  };
   
   const { data: products = [], isLoading: isLoadingProducts } = useQuery<Product[]>({
     queryKey: ['/api/products'],
@@ -52,7 +68,7 @@ export default function Marketplace() {
       />
       
       <div className="container py-10 max-w-6xl mx-auto px-4">
-        <Tabs defaultValue="products" value={activeTab} onValueChange={(value) => setActiveTab(value as 'products' | 'cart')}>
+        <Tabs defaultValue="products" value={activeTab} onValueChange={handleTabChange}>
           <div className="flex justify-between items-center mb-8">
             <TabsList className="bg-transparent border border-primary/10">
               <TabsTrigger 

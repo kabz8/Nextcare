@@ -25,7 +25,11 @@ export default function CartIcon() {
     <HoverCard openDelay={100} closeDelay={200}>
       <HoverCardTrigger asChild>
         <div className="relative">
-          <Button variant="ghost" className="relative p-2">
+          <Button 
+            variant="ghost" 
+            className="relative p-2"
+            onClick={goToCart}
+          >
             <ShoppingCart className="h-5 w-5" />
             {totalItems > 0 && (
               <Badge 

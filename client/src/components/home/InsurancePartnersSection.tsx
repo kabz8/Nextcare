@@ -11,6 +11,7 @@ import uapOldMutualLogoPath from "../../assets/insurance-logos/uap-old-mutual.pn
 import cignaLogoPath from "../../assets/insurance-logos/cigna.png";
 import aarInsuranceLogoPath from "../../assets/insurance-logos/aar-insurance.png";
 import mtibaLogoPath from "../../assets/insurance-logos/mtiba.png";
+import jubileeInsuranceLogoPath from "../../assets/insurance-logos/jubilee-insurance.png";
 
 // Define insurance partner type
 interface InsurancePartner {
@@ -32,7 +33,8 @@ export default function InsurancePartnersSection() {
     { name: "UAP Old Mutual", logo: uapOldMutualLogoPath },
     { name: "Cigna", logo: cignaLogoPath },
     { name: "AAR Insurance", logo: aarInsuranceLogoPath },
-    { name: "M-TIBA", logo: mtibaLogoPath }
+    { name: "M-TIBA", logo: mtibaLogoPath },
+    { name: "Jubilee Insurance", logo: jubileeInsuranceLogoPath }
   ];
 
   return (

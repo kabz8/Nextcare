@@ -18,6 +18,7 @@ import uapOldMutualLogoPath from "../assets/insurance-logos/uap-old-mutual.png";
 import cignaLogoPath from "../assets/insurance-logos/cigna.png";
 import aarInsuranceLogoPath from "../assets/insurance-logos/aar-insurance.png";
 import mtibaLogoPath from "../assets/insurance-logos/mtiba.png";
+import jubileeInsuranceLogoPath from "../assets/insurance-logos/jubilee-insurance.png";
 
 // Updated insurance partners with logos
 const insurancePartners = [
@@ -104,6 +105,13 @@ const insurancePartners = [
     logo: mtibaLogoPath,
     description: "Digital healthcare financing solutions for accessible care.",
     plans: ["Basic Plan", "Standard Plan", "Premium Plan"]
+  },
+  {
+    id: 13,
+    name: "Jubilee Insurance",
+    logo: jubileeInsuranceLogoPath,
+    description: "Reliable and comprehensive dental insurance solutions for individuals and families.",
+    plans: ["Basic Dental", "Standard Dental", "Premium Dental"]
   }
 ];
 

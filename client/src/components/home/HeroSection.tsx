@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Star, Shield, Clock, Heart } from "lucide-react";
 import heroDentistImage from "../../assets/hero-dentist.png";
+import dentalChairImage from "../../assets/dental-chair.png";
 
 export default function HeroSection() {
   return (
@@ -77,13 +78,12 @@ export default function HeroSection() {
             <div className="absolute top-1/2 right-1/4 w-12 h-12 rounded-full bg-primary/30 z-0 hidden md:block"></div>
             
             {/* Main image container with enhanced styling */}
-            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl shadow-primary/30 border-[8px] border-white transform hover:scale-[1.02] transition-transform duration-500 rotate-1">
+            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl shadow-primary/30 border-[8px] border-white transform hover:scale-[1.02] transition-transform duration-500 rotate-1 max-w-[640px] w-full">
               <img 
-                src={heroDentistImage} 
-                alt="Smiling dental professional at Nextcare Dental Studio" 
-                className="max-w-full h-auto object-cover" 
-                width="540" 
-                height="540"
+                src={dentalChairImage} 
+                alt="Modern dental chair at Nextcare Dental Studio" 
+                className="w-full h-auto object-cover" 
+                style={{ minHeight: "460px", objectPosition: "center" }}
               />
               
               {/* Improved overlay gradient */}
@@ -105,15 +105,15 @@ export default function HeroSection() {
             
             {/* Second smaller image positioned at the edge */}
             <div className="absolute -bottom-8 -right-8 z-20 md:block">
-              <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-primary/20 border-[6px] border-white transform -rotate-6 hover:scale-105 transition-all duration-300" style={{ width: "180px", height: "180px" }}>
+              <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-primary/20 border-[6px] border-white transform -rotate-6 hover:scale-105 transition-all duration-300" style={{ width: "220px", height: "220px" }}>
                 <img 
                   src={heroDentistImage} 
-                  alt="Dental treatment chair" 
+                  alt="Dental professional at Nextcare Dental Studio" 
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-bl from-[#00ADDD]/15 to-transparent"></div>
                 <div className="absolute top-0 left-0 bg-[#36B5A6] text-white text-xs px-2 py-1 rounded-br-lg font-medium">
-                  Our Facility
+                  Our Team
                 </div>
               </div>
             </div>
